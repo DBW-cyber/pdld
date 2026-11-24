@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=1080">
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<style>
+@page { size: 1080px 1920px; margin: 0; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { width:1080px; min-height:1920px; font-family:"Noto Sans CJK JP","Noto Sans CJK SC",sans-serif; background:linear-gradient(160deg,#fdf6ec 0%,#fdeef4 48%,#eef4fd 100%); color:#33404f; padding:6px 26px 2px; }
+header { display:flex; justify-content:space-between; align-items:flex-start; }
+h1 { font-size:46px; font-weight:900; color:#123c63; line-height:1.1; }
+h1 .accent{color:#e86a92;}
+.sub { font-size:17px; color:#5a6d7f; margin-top:3px; line-height:1.4; font-weight:700;}
+.note { text-align:right; font-size:14.5px; line-height:1.5; color:#4a6072; font-weight:700; background:#fff; border-radius:12px; padding:8px 12px; box-shadow:0 3px 8px rgba(90,110,140,.10); white-space:nowrap;}
+.up{color:#0e9f6e;font-weight:900;} .dn{color:#d6455b;font-weight:900;}
+.topcards{display:flex; gap:12px; margin-top:6px;}
+.tcard{flex:1; background:#fff; border-radius:18px; padding:7px 16px 6px; box-shadow:0 6px 16px rgba(90,110,140,.12);}
+.tcard.pink{border-top:8px solid #f28ba8;} .tcard.gold{border-top:8px solid #f6c453;} .tcard.blue{border-top:8px solid #7fb3d9;}
+.tlabel{font-size:15px; font-weight:900; color:#6d7f8f; letter-spacing:.5px;}
+.tbig{font-size:42px; font-weight:900; color:#12293e; margin-top:4px; line-height:1.1;}
+.tbig small{font-size:20px;}
+.tsub{font-size:15.5px; line-height:1.45; color:#42566a; margin-top:4px;}
+.outlook{font-size:21px; font-weight:900; color:#12293e; line-height:1.45; margin-top:6px;}
+.panel{background:#fff; border-radius:18px; padding:3px 20px 2px; box-shadow:0 6px 16px rgba(90,110,140,.10); margin-top:4px;}
+.concl{border-top:8px solid #f28ba8;} .imp{border-top:8px solid #f6c453;}
+.ptitle{font-size:22px; font-weight:900; color:#123c63; margin-bottom:6px;}
+.judge{font-size:24px; font-weight:900; color:#12293e; line-height:1.30;}
+.attn{margin-top:4px; border:2px solid #e05252; background:#fff1f1; color:#9b2c2c; border-radius:10px; padding:5px 12px; font-size:16px; font-weight:800; line-height:1.45;}
+.ev{font-size:20px; line-height:1.22; color:#22303e; font-weight:800; padding:2px 0 2px 18px; position:relative;}
+.ev::before{content:"•"; position:absolute; left:1px; color:#e8930c; font-weight:900;}
+.ev b{color:#123c63;}
+.sect{font-size:23px; font-weight:900; color:#123c63; margin:2px 2px 1px;}
+.sect span{font-size:14px; color:#6d7f8f; font-weight:700;}
+.grid{display:flex; flex-wrap:wrap; gap:3px;}
+.card{width:509px; height:136px; background:#fff; border-radius:16px; padding:7px 15px 5px; box-shadow:0 4px 12px rgba(90,110,140,.10); border-top:6px solid #ccc;}
+.c1{border-top-color:#f6c453;} .c2{border-top-color:#f28ba8;} .c3{border-top-color:#7fb3d9;} .c4{border-top-color:#82c99b;} .c5{border-top-color:#b39ddb;}
+.chead{display:flex; align-items:center; gap:8px;}
+.badge{width:26px;height:26px;border-radius:50%;background:#123c63;color:#fff;font-size:15px;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none;}
+.logo{height:30px; max-width:88px; object-fit:contain; flex:none;}
+.cname{font-size:20px; font-weight:900; color:#22303e; white-space:nowrap;}
+.ctick{font-size:12.5px; color:#8a99a8; font-weight:700; margin-left:auto; white-space:nowrap;}
+.prow{display:flex; align-items:baseline; gap:10px; margin-top:2px;}
+.price{font-size:20px; font-weight:900; color:#12293e; white-space:nowrap;}
+.pill{font-size:16px; font-weight:900; color:#fff; border-radius:8px; padding:2px 10px; white-space:nowrap;}
+.pill.up{background:#12b981;} .pill.dn{background:#ef5350;}
+.theme{font-size:14px; font-weight:800; color:#7a5a00; background:#fdf3d7; border-radius:7px; padding:2px 8px; display:inline-block; margin-left:auto; white-space:nowrap; align-self:center;}
+.fin{font-size:17px; font-weight:900; color:#12293e; margin-top:3px; white-space:nowrap;}
+.obs{font-size:16.5px; line-height:1.32; font-weight:800; color:#22303e; margin-top:3px;}
+.val{font-size:16.5px; line-height:1.3; font-weight:900; color:#9a6206; margin-top:2px;}
+.band{background:#123c63; color:#fff; border-radius:16px; padding:5px 18px 4px; margin-top:4px;}
+.band h2{font-size:20px; font-weight:900; margin-bottom:5px;}
+.band .ev2{font-size:16px; line-height:1.42; padding-left:14px; position:relative;}
+.band .ev2::before{content:"•"; position:absolute; left:0; color:#f6c453;}
+.band .next{margin-top:2px; font-size:16.5px; font-weight:900; color:#ffe08a;}
+footer{margin-top:2px; font-size:12.3px; line-height:1.32; color:#8496a6; text-align:center;}
+footer b{color:#5f7488;}
+.vix{border-top:8px solid #7fb3d9;}
+.vixrow{display:flex; align-items:center; gap:14px; margin-bottom:2px;}
+.vixlabel{font-size:22px; font-weight:900; color:#123c63; white-space:nowrap;}
+.vixbig{font-size:40px; font-weight:900; color:#12293e; line-height:1;}
+.vixnote{font-size:14px; color:#6d7f8f; font-weight:700; margin-left:auto; text-align:right; line-height:1.4;}
+.vixobs{font-size:15.5px; font-weight:800; color:#42566a; margin-top:2px;}
+
+.caliber{font-size:14.5px; font-weight:800; color:#42566a; background:#fff; border-radius:10px; padding:5px 14px; margin-top:5px; box-shadow:0 3px 8px rgba(90,110,140,.08); line-height:1.4;}
+.contrib{background:#fff; border-radius:14px; padding:6px 18px; box-shadow:0 4px 12px rgba(90,110,140,.10); margin-top:4px; font-size:16.5px; font-weight:800; color:#22303e; line-height:1.45;}
+.contrib b{color:#123c63;}
+.tag{font-size:14px; font-weight:900; color:#fff; border-radius:6px; padding:1px 7px; margin-right:6px; vertical-align:2px;}
+.tag.d{background:#2f7fb8;} .tag.i{background:#82a86b;} .tag.m{background:#b08968;}
+</style></head><body><div style="display:flex;gap:12px;padding:10px 0 14px;"><a href="assets.html" style="flex:1;text-align:center;background:#123c63;color:#fff;padding:17px 8px;border-radius:12px;font-size:25px;font-weight:700;text-decoration:none;">&#128274; デジタル資産</a><a href="tasks.html" style="flex:1;text-align:center;background:#123c63;color:#fff;padding:17px 8px;border-radius:12px;font-size:25px;font-weight:700;text-decoration:none;">&#128274; タスク進捗</a></div>
+
+<header><div><h1>◆ WCM <span class="accent">日報</span></h1><div class="sub">ＷＣＭ 世界成長株厳選ファンド（予想分配金提示型）<br>2026年11月24日（火）</div></div>
+<div class="note">市場日：欧米株＝11/23 終値<br>韓国株＝11/23 終値<br><span class="up">▲ 緑＝上昇</span>　<span class="dn">▼ 赤＝下落</span></div></header>
+<div class="caliber">データ口径：基準価額＝11月20日公表分（最新公表分）／海外株＝11月23日終値（米・欧）／韓国株＝11月23日終値／組入比率＝2026-10-30 開示基準</div>
+<div class="topcards">
+<div class="tcard pink"><div class="tlabel">① 最新基準価額</div><div class="tbig">10,051<small> 円</small></div><div class="tsub"><span class="dn">▼ −161円（−1.58%）</span>｜11/20 分<br>出典：公表値・楽天証券確認<br>純資産額 5,085.32億円</div></div>
+<div class="tcard gold"><div class="tlabel">② 今月の見通し（預判）</div><div class="outlook">米株の反発が続き、輸出規制と調査を巡る確認が進むことが、月内の回復の条件です。</div></div>
+<div class="tcard blue"><div class="tlabel">③ 半年内の見通し（預判）</div><div class="outlook">AI設備投資の持続が支えです。金利と規制の動向が落ち着くことが、緩やかな回復の条件です。</div></div>
+</div>
+
+<div class="panel imp"><div class="ptitle">🔎 重要情報</div>
+<div class="ev"><span class="tag i">間接</span><b>NvidiaのHuang CEO復帰（米 11/23）</b>：取締役会の発表を受け米株は S&amp;P 500 +4.73%（7,237.17）、Nasdaq +6.51%と反発し、半導体経由で TSMC など重点銘柄に影響しました。調査は継続中です。</div>
+<div class="ev"><span class="tag d">直接</span><b>騰落最大（11/23）</b>：上昇は TSMC ADR +14.08%、次いで Charles River +7.62%、Siemens Energy +6.88%。下落は Samsung Electronics −3.06% のみでした。</div>
+<div class="ev"><span class="tag d">直接</span><b>Samsung −3.06%（韓 11/23）</b>：KOSPI −3.31%と同程度の下げで、金曜の米半導体安の時差反映と輸出規制材料が Samsung に影響しました。米11/23の反発は韓国現物に未反映です。</div>
+<div class="ev"><span class="tag m">マクロ</span><b>向こう1週間</b>：Dell決算（米 11/24 引け後／日本 11/25 朝）と、米PCE・GDP（米 11/25／日本 11/25 夜）が焦点です。11/25は当ファンドの決算日です。</div>
+<div class="ptitle" style="margin-top:6px;">📌 今日の判断</div>
+<div class="judge">最新基準価額は11/20分で10,051円（−161円）ですが、米11/23は反発し重点10銘柄は9銘柄が上昇しました。</div>
+<div class="attn">注意：米11/23の反発は11/20分の基準価額には含まれず、主に翌営業日の基準価額に反映されます。韓国株11/23の下げも同様です。</div>
+</div>
+
+<div class="sect">📈 重点10銘柄 <span>最新終値（11/23）・2026-10-30基準の新前十（組入比率順）</span></div>
+<div class="grid"><div class="card c1"><div class="chead"><div class="badge">1</div><img class="logo" src="company-logos/rolls-royce.png"><div class="cname">Rolls-Royce</div><div class="ctick">RR.｜GBp｜11/23</div></div><div class="prow"><div class="price">1,335.8 p</div><div class="pill up">▲ ＋4.97%</div><span class="theme">航空・防衛エンジン</span></div><div class="fin">売上 £112.8億（+26%）・純利益 £16.2億（−63%）｜26H1</div><div class="obs">観測：欧州の防衛株高を上回る上昇でした。</div><div class="val">評価額 1,150p（ChatGPT試算 11/22）</div></div><div class="card c2"><div class="chead"><div class="badge">2</div><img class="logo" src="company-logos/siemens-energy.png"><div class="cname">Siemens Energy</div><div class="ctick">ENR｜EUR｜11/23</div></div><div class="prow"><div class="price">€126.46</div><div class="pill up">▲ ＋6.88%</div><span class="theme">電力インフラ</span></div><div class="fin">売上 €442億（+13%）・純利益 €41.3億（+145%）｜FY26通期</div><div class="obs">観測：AI電力インフラ株の買い戻しに連れました。</div><div class="val">評価額 €135（ChatGPT試算 11/22）</div></div><div class="card c3"><div class="chead"><div class="badge">3</div><img class="logo" src="company-logos/tsmc.png"><div class="cname">TSMC ADR</div><div class="ctick">TSM｜USD｜11/23</div></div><div class="prow"><div class="price">$363.60</div><div class="pill up">▲ ＋14.08%</div><span class="theme">AI半導体</span></div><div class="fin">売上 NT$1.49兆（+41%）・純利益 NT$7,631億（+69%）｜26Q3</div><div class="obs">観測：Huang復帰を受けた半導体買い戻しが主因です。</div><div class="val">評価額 $440（ChatGPT試算 11/22）</div></div><div class="card c4"><div class="chead"><div class="badge">4</div><img class="logo" src="company-logos/sharkninja.png"><div class="cname">SharkNinja</div><div class="ctick">SN｜USD｜11/23</div></div><div class="prow"><div class="price">$225.37</div><div class="pill up">▲ ＋5.99%</div><span class="theme">家電・消費</span></div><div class="fin">売上 $19.8億（+21%）・純利益 $3.4億（+79%）｜26Q3</div><div class="obs">観測：全面反発の中で消費財も買われました。</div><div class="val">評価額 $180（ChatGPT試算 11/22）</div></div><div class="card c5"><div class="chead"><div class="badge">5</div><img class="logo" src="company-logos/welltower.png"><div class="cname">Welltower</div><div class="ctick">WELL｜USD｜11/23</div></div><div class="prow"><div class="price">$240.93</div><div class="pill up">▲ ＋0.25%</div><span class="theme">ヘルスケアREIT</span></div><div class="fin">売上 $37.2億（+38%）・純利益 $4.1億（+47%）｜26Q3</div><div class="obs">観測：指数が大幅高の日もほぼ横ばいでした。</div><div class="val">評価額 $210（ChatGPT試算 11/22）</div></div><div class="card c1"><div class="chead"><div class="badge">6</div><img class="logo" src="company-logos/samsung.png"><div class="cname">Samsung Electronics</div><div class="ctick">005930｜KRW｜11/23</div></div><div class="prow"><div class="price">₩177,500</div><div class="pill dn">▼ −3.06%</div><span class="theme">メモリ・HBM</span></div><div class="fin" style="font-size:14.8px;">売上 ₩195.3兆（+127%）・純利益 ₩75.1兆（+515%）｜26Q3</div><div class="obs">観測：KOSPI（−3.31%）とほぼ同率の下げでした。</div><div class="val">評価額 ₩230,000（ChatGPT試算 11/22）</div></div><div class="card c2"><div class="chead"><div class="badge">7</div><img class="logo" src="company-logos/teva.png"><div class="cname">Teva</div><div class="ctick">TEVA｜USD｜11/23</div></div><div class="prow"><div class="price">$40.04</div><div class="pill up">▲ ＋2.06%</div><span class="theme">医薬品</span></div><div class="fin">売上 $44.0億（−2%）・純利益 $2.3億（−46%）｜26Q3</div><div class="obs">観測：前日の反発が続きました。</div><div class="val">評価額 $39（ChatGPT試算 11/22）</div></div><div class="card c3"><div class="chead"><div class="badge">8</div><img class="logo" src="company-logos/microsoft.png"><div class="cname">Microsoft</div><div class="ctick">MSFT｜USD｜11/23</div></div><div class="prow"><div class="price">$492.50</div><div class="pill up">▲ ＋1.65%</div><span class="theme">クラウド・AI</span></div><div class="fin" style="font-size:15.5px;">売上 $922.8億（+19%）・純利益 $366.3億（+32%）｜FY27Q1</div><div class="obs">観測：場中高値からは押して引けました。</div><div class="val">評価額 $616（ChatGPT試算 11/22）</div></div><div class="card c4"><div class="chead"><div class="badge">9</div><img class="logo" src="company-logos/meta.png"><div class="cname">Meta Platforms</div><div class="ctick">META｜USD｜11/23</div></div><div class="prow"><div class="price">$597.60</div><div class="pill up">▲ ＋6.55%</div><span class="theme">SNS・AI投資</span></div><div class="fin" style="font-size:16px;">売上 $646億（+26%）・純利益 $98.6億（+264%）｜26Q3</div><div class="obs">観測：$600近辺まで戻しました。</div><div class="val">評価額 $640（ChatGPT試算 11/22）</div></div><div class="card c5"><div class="chead"><div class="badge">10</div><img class="logo" src="company-logos/charles-river.png"><div class="cname">Charles River Labs</div><div class="ctick">CRL｜USD｜11/23</div></div><div class="prow"><div class="price">$338.26</div><div class="pill up">▲ ＋7.62%</div><span class="theme">創薬支援・CRO</span></div><div class="fin">売上 $9.8億（−2%）・純利益 $3.3億（+512%）｜26Q3</div><div class="obs">観測：ヘルスケアの中でも戻しが大きい銘柄でした。</div><div class="val">評価額 $260（ChatGPT試算 11/22）</div></div></div>
+
+<div class="contrib"><b>推定寄与（組入比率×騰落率）</b>：寄与最大は TSMC ADR 約+0.73pt、拖累最大は Samsung 約−0.14pt。10銘柄合計は約+2.25ptで、基準価額の前日比（−1.58%）との差は、主に時間差（米11/23の反発が未反映）によるものです。</div>
+
+<div class="panel vix"><div class="vixrow"><div class="vixlabel">📉 VIX（恐怖指数）</div><div class="vixbig">26.62</div><div class="pill up">▼ −9.27（−25.8%）</div><div class="vixnote">11/23 終値（前営業日 35.89）※複数源で確認<br>直近半年（約126営業日）の終値推移</div></div>
+<svg width="988" height="56" viewBox="0 0 988 96"><polygon points="8,94.0 8.0,71.2 15.6,73.3 23.2,74.9 30.8,76.2 38.4,74.0 46.0,74.9 53.6,74.0 61.2,75.9 68.8,57.8 76.3,65.5 83.9,62.7 91.5,55.8 99.1,64.0 106.7,69.2 114.3,73.6 121.9,73.0 129.5,66.9 137.1,73.0 144.7,71.8 152.3,70.4 159.9,63.8 167.5,66.3 175.1,65.6 182.7,67.1 190.2,69.3 197.8,72.8 205.4,72.4 213.0,73.7 220.6,74.7 228.2,75.4 235.8,73.8 243.4,71.5 251.0,74.6 258.6,77.0 266.2,70.7 273.8,72.7 281.4,75.2 289.0,72.0 296.6,65.9 304.2,66.3 311.8,71.1 319.3,72.3 326.9,66.2 334.5,66.5 342.1,66.2 349.7,67.6 357.3,60.4 364.9,71.0 372.5,74.2 380.1,74.6 387.7,72.7 395.3,74.7 402.9,76.7 410.5,77.4 418.1,75.7 425.7,76.3 433.2,78.5 440.8,78.2 448.4,79.3 456.0,76.6 463.6,74.6 471.2,77.5 478.8,74.1 486.4,76.7 494.0,74.6 501.6,75.8 509.2,76.5 516.8,78.6 524.4,78.8 532.0,77.3 539.6,73.1 547.2,76.5 554.8,79.1 562.3,78.5 569.9,76.2 577.5,75.0 585.1,72.8 592.7,68.7 600.3,74.6 607.9,70.9 615.5,70.6 623.1,69.1 630.7,75.8 638.3,77.7 645.9,77.5 653.5,79.5 661.1,76.6 668.7,75.2 676.2,77.5 683.8,74.0 691.4,74.0 699.0,73.1 706.6,73.0 714.2,76.2 721.8,75.6 729.4,77.1 737.0,76.9 744.6,75.9 752.2,77.6 759.8,76.5 767.4,76.3 775.0,71.6 782.6,72.8 790.2,62.3 797.8,66.9 805.3,70.3 812.9,72.1 820.5,65.2 828.1,63.9 835.7,67.1 843.3,69.7 850.9,71.5 858.5,70.6 866.1,64.0 873.7,58.9 881.3,59.8 888.9,72.4 896.5,38.1 904.1,45.6 911.7,62.6 919.2,63.9 926.8,69.8 934.4,66.2 942.0,64.4 949.6,53.7 957.2,46.1 964.8,48.8 972.4,37.3 980.0,15.2 987.0,42.6 987.0,94.0" fill="rgba(127,179,217,.28)"/><line x1="8" y1="62.3" x2="980" y2="62.3" stroke="#b9c7d6" stroke-width="1.5" stroke-dasharray="6 5"/><text x="10" y="57.3" font-size="13" font-weight="700" fill="#8496a6">20</text><polyline points="8.0,71.2 15.6,73.3 23.2,74.9 30.8,76.2 38.4,74.0 46.0,74.9 53.6,74.0 61.2,75.9 68.8,57.8 76.3,65.5 83.9,62.7 91.5,55.8 99.1,64.0 106.7,69.2 114.3,73.6 121.9,73.0 129.5,66.9 137.1,73.0 144.7,71.8 152.3,70.4 159.9,63.8 167.5,66.3 175.1,65.6 182.7,67.1 190.2,69.3 197.8,72.8 205.4,72.4 213.0,73.7 220.6,74.7 228.2,75.4 235.8,73.8 243.4,71.5 251.0,74.6 258.6,77.0 266.2,70.7 273.8,72.7 281.4,75.2 289.0,72.0 296.6,65.9 304.2,66.3 311.8,71.1 319.3,72.3 326.9,66.2 334.5,66.5 342.1,66.2 349.7,67.6 357.3,60.4 364.9,71.0 372.5,74.2 380.1,74.6 387.7,72.7 395.3,74.7 402.9,76.7 410.5,77.4 418.1,75.7 425.7,76.3 433.2,78.5 440.8,78.2 448.4,79.3 456.0,76.6 463.6,74.6 471.2,77.5 478.8,74.1 486.4,76.7 494.0,74.6 501.6,75.8 509.2,76.5 516.8,78.6 524.4,78.8 532.0,77.3 539.6,73.1 547.2,76.5 554.8,79.1 562.3,78.5 569.9,76.2 577.5,75.0 585.1,72.8 592.7,68.7 600.3,74.6 607.9,70.9 615.5,70.6 623.1,69.1 630.7,75.8 638.3,77.7 645.9,77.5 653.5,79.5 661.1,76.6 668.7,75.2 676.2,77.5 683.8,74.0 691.4,74.0 699.0,73.1 706.6,73.0 714.2,76.2 721.8,75.6 729.4,77.1 737.0,76.9 744.6,75.9 752.2,77.6 759.8,76.5 767.4,76.3 775.0,71.6 782.6,72.8 790.2,62.3 797.8,66.9 805.3,70.3 812.9,72.1 820.5,65.2 828.1,63.9 835.7,67.1 843.3,69.7 850.9,71.5 858.5,70.6 866.1,64.0 873.7,58.9 881.3,59.8 888.9,72.4 896.5,38.1 904.1,45.6 911.7,62.6 919.2,63.9 926.8,69.8 934.4,66.2 942.0,64.4 949.6,53.7 957.2,46.1 964.8,48.8 972.4,37.3 980.0,15.2 987.0,42.6" fill="none" stroke="#2f7fb8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="980.0" cy="15.2" r="5" fill="#d6455b"/><text x="980.0" y="35.2" font-size="15" font-weight="900" fill="#d6455b" text-anchor="end">最高 35.89（11/20）</text><circle cx="653.5" cy="79.5" r="5" fill="#0e9f6e"/><text x="653.5" y="67.5" font-size="15" font-weight="900" fill="#0e7a55" text-anchor="middle">最低 14.21（9/22）</text><circle cx="980.0" cy="15.2" r="5" fill="#123c63"/><text x="987" y="92" font-size="13" font-weight="700" fill="#8496a6" text-anchor="end">直近半年　最新 26.62</text></svg>
+<div class="vixobs">観測：20を超える水準は、警戒感が残る地合いとされます。終値は複数源で確認しました。</div></div>
+
+<div class="band"><h2>🗓 後続重点（向こう1週間）</h2>
+<div class="ev2">Dell決算（米 11/24 引け後／日本 11/25 朝）——AIサーバー需要が焦点です</div>
+<div class="ev2">米PCE・GDP第2次推計（米 11/25／日本 11/25 22:30）と当ファンドの決算日（11/25）</div>
+<div class="ev2">11/26（木）は米感謝祭で米市場は休場、当ファンドも休日です</div>
+<div class="next">次の一手：反発が続くかと、PCE・Dell決算への反応を確認します。</div></div>
+
+<footer>出典：<b>楽天証券</b>（基準価額 11/20・直接確認）／ <b>Finnhubほか</b>（10銘柄終値 11/23、Siemens Energy・Samsungは各市場集計で確認）／ <b>WSJ・Reutersほか</b>（米指数・Huang復帰）／各社公式決算（売上・純利益）／ <b>CBOE公式データに基づく複数源</b>（VIX 11/23終値 26.62）｜ 取得：2026-11-24 07:00 JST（前日07:00→当日07:00 结算）<br>投資勧誘ではありません。</footer>
+</body></html>
