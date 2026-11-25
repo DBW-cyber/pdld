@@ -120,6 +120,10 @@ aside.side a.iconlink{display:block;line-height:0;}
 aside.side a.iconlink img{width:104px;height:104px;border-radius:22px;box-shadow:0 4px 14px rgba(90,110,140,.18);}
 @media (min-width:1400px){.hwrap{overflow:visible;}aside.side{position:sticky;top:26px;}}
 .grid{gap:2px;}
+/* web-only card width: inside .report the content width is the full 1080px (the source
+   body's 26px padding sits outside .report), so cards are 539px (539*2 + gap 2 = 1080)
+   to align the grid's right edge with the other blocks. The PNG/source HTML keeps
+   513px cards for its 1028px content width. Do not "unify" the two numbers. */
 .card{width:539px;height:auto;min-height:164px;padding:10px 16px 10px;}
 .obs{margin-top:4px;}
 .val{margin-top:4px;}
