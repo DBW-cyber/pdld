@@ -134,7 +134,7 @@ footer b{color:#5f7488;}
 <footer>出典：<b>楽天証券</b>（基準価額 11/24・ファンドコード JP90C0002EX1・直接確認）／ <b>Finnhub・StockAnalysis・MarketWatchほか</b>（銘柄終値、欧米 11/24・香港 11/25）／ <b>みんかぶ投資信託</b>（組入上位 2026-10-30基準の速報抽出、第3位・第8位は銘柄名が空欄のため未特定）／各社公式決算・専档整理（売上・純利益）｜ 取得：2026-11-25 19:22 JST（初回運行時点の最新公表分）<br>投資勧誘ではありません。</footer>
 </div>
 </div>
-<aside class="side"><a class="iconlink" href="reports.html" title="Reports"><img src="icons/icon-reports.webp" alt="Reports"></a><a class="iconlink" href="assets.html" title="Digital Assets"><img src="icons/icon-assets.webp" alt="Digital Assets"></a><a class="iconlink" href="tasks.html" title="Daily Tasks"><img src="icons/icon-tasks.webp" alt="Daily Tasks"></a></aside></div><style>
+<aside class="side"><div class="sidestick"><a class="iconlink" href="reports.html" title="Reports"><img src="icons/icon-reports.webp" alt="Reports"></a><a class="iconlink" href="assets.html" title="Digital Assets"><img src="icons/icon-assets.webp" alt="Digital Assets"></a><a class="iconlink" href="tasks.html" title="Daily Tasks"><img src="icons/icon-tasks.webp" alt="Daily Tasks"></a></div></aside></div><style>
 /* web-only overrides: the report column is 1000px wide inside the 1080px phone
    viewport (user 2026-11-25: slightly narrower so the whole report is visible on
    phones without swiping; the ~80px slack absorbs browser fit quirks). The icon
@@ -148,9 +148,13 @@ html{background:linear-gradient(160deg,#fdf6ec 0%,#fdeef4 48%,#eef4fd 100%);}
    pushed .report to x=26..1106, past the 1080px phone viewport, cutting the right
    edge off on phones. With this override .report spans exactly 0..1080. */
 body{margin:0;background:transparent;width:auto;padding:4px 0 0;}
-.hwrap{display:flex;flex-direction:row;align-items:flex-start;width:1254px;margin:0 auto;overflow:visible;}
+.hwrap{display:flex;flex-direction:row;width:1254px;margin:0 auto;overflow:visible;}
 .report{width:1000px;flex:0 0 auto;}
-aside.side{width:236px;flex:0 0 auto;margin-left:18px;padding-top:26px;display:flex;flex-direction:column;align-items:center;gap:16px;position:sticky;top:26px;}
+aside.side{width:236px;flex:0 0 auto;margin-left:18px;}
+/* floating buttons: the aside stretches the full row height and this inner
+   wrapper is the sticky element (a sticky flex ITEM does not travel in
+   Chrome — user report 2026-11-25: buttons stayed at the top on his phone). */
+.sidestick{position:sticky;top:26px;padding-top:26px;display:flex;flex-direction:column;align-items:center;gap:16px;}
 aside.side a.iconlink{display:block;line-height:0;}
 aside.side a.iconlink img{width:104px;height:104px;border-radius:22px;box-shadow:0 4px 14px rgba(90,110,140,.18);}
 .grid{gap:2px;}
