@@ -67,7 +67,7 @@ footer b{color:#5f7488;}
 .tag{font-size:14px; font-weight:900; color:#fff; border-radius:6px; padding:1px 7px; margin-right:6px; vertical-align:2px;}
 .tag.d{background:#2f7fb8;} .tag.i{background:#82a86b;} .tag.m{background:#b08968;}
 </style></head><body>
-<div class="report">
+<div class="hwrap"><div class="report">
 
 <header><div><h1>◆ WCM <span class="accent">日報</span></h1><div class="sub">ＷＣＭ 世界成長株厳選ファンド（予想分配金提示型）<br>2026年11月25日（水）</div></div>
 <div class="note">市場日：欧米株＝11/24 終値<br>韓国株＝11/24 終値<br><span class="up">▲ 緑＝上昇</span>　<span class="dn">▼ 赤＝下落</span></div></header>
@@ -105,16 +105,20 @@ footer b{color:#5f7488;}
 
 <footer>出典：<b>楽天証券</b>（基準価額 11/24・直接確認）／ <b>Finnhubほか</b>（10銘柄終値 11/24、欧州・韓国株は各市場集計で確認）／ <b>Reuters・WSJほか</b>（米指数・Dell決算）／各社公式決算（売上・純利益）／ <b>CBOE公式データに基づく複数源</b>（VIX 11/24終値 26.36、CBOE遅延クォートは取得不可）｜ 取得：2026-11-25 07:00 JST（前日07:00→当日07:00 结算）<br>投資勧誘ではありません。</footer>
 </div>
-<aside class="side"><a class="iconlink" href="assets.html" title="Digital Assets"><img src="icons/icon-assets.webp" alt="Digital Assets"></a><a class="iconlink" href="tasks.html" title="Daily Tasks"><img src="icons/icon-tasks.webp" alt="Daily Tasks"></a><a class="iconlink" href="reports.html" title="Reports"><img src="icons/icon-reports.webp" alt="Reports"></a></aside><style>
-/* web-only overrides: report (1080px) + right sidebar laid out as a flex row, centered on wide
-   screens; on narrow screens the report fills the view and the sidebar is reached by swiping right.
+<aside class="side"><a class="iconlink" href="reports.html" title="Reports"><img src="icons/icon-reports.webp" alt="Reports"></a><a class="iconlink" href="assets.html" title="Digital Assets"><img src="icons/icon-assets.webp" alt="Digital Assets"></a><a class="iconlink" href="tasks.html" title="Daily Tasks"><img src="icons/icon-tasks.webp" alt="Daily Tasks"></a></aside></div><style>
+/* web-only overrides: report (1080px) + right sidebar in a horizontally scrollable row.
+   The document itself stays exactly 1080px wide (the viewport), so on phones the report
+   fills the first screen and the sidebar appears only after swiping sideways; on wide
+   desktop screens the whole row is visible, centered, with a sticky sidebar.
    Roomier stock cards so every line (incl. valuation) fits inside the card. */
 html{background:linear-gradient(160deg,#fdf6ec 0%,#fdeef4 48%,#eef4fd 100%);}
-body{margin:0 auto;display:flex;flex-direction:row;align-items:flex-start;justify-content:center;width:max-content;min-width:1080px;background:transparent;}
+body{margin:0;background:transparent;}
+.hwrap{display:flex;flex-direction:row;align-items:flex-start;width:100%;max-width:1334px;margin:0 auto;overflow-x:auto;overflow-y:hidden;}
 .report{width:1080px;flex:0 0 auto;}
-aside.side{width:236px;flex:0 0 auto;margin-left:18px;padding-top:26px;display:flex;flex-direction:column;align-items:center;gap:16px;position:sticky;top:26px;}
+aside.side{width:236px;flex:0 0 auto;margin-left:18px;padding-top:26px;display:flex;flex-direction:column;align-items:center;gap:16px;}
 aside.side a.iconlink{display:block;line-height:0;}
 aside.side a.iconlink img{width:104px;height:104px;border-radius:22px;box-shadow:0 4px 14px rgba(90,110,140,.18);}
+@media (min-width:1400px){.hwrap{overflow:visible;}aside.side{position:sticky;top:26px;}}
 .grid{gap:8px;}
 .card{height:auto;min-height:164px;padding:10px 16px 10px;}
 .obs{margin-top:4px;}
