@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja"><head><meta charset="utf-8">
-<meta name="viewport" content="width=1080">
+<meta name="viewport" content="width=1110">
 <!DOCTYPE html>
 <html lang="ja"><head><meta charset="utf-8">
 <style>
@@ -112,7 +112,10 @@ footer b{color:#5f7488;}
    desktop screens the whole row is visible, centered, with a sticky sidebar.
    Roomier stock cards so every line (incl. valuation) fits inside the card. */
 html{background:linear-gradient(160deg,#fdf6ec 0%,#fdeef4 48%,#eef4fd 100%);}
-body{margin:0;background:transparent;}
+/* width:auto + no side padding: the source body's width:1080px + 26px side padding
+   pushed .report to x=26..1106, past the 1080px phone viewport, cutting the right
+   edge off on phones. With this override .report spans exactly 0..1080. */
+body{margin:0;background:transparent;width:auto;padding:4px 0 0;}
 .hwrap{display:flex;flex-direction:row;align-items:flex-start;width:100%;max-width:1334px;margin:0 auto;overflow-x:auto;overflow-y:hidden;}
 .report{width:1080px;flex:0 0 auto;}
 aside.side{width:236px;flex:0 0 auto;margin-left:18px;padding-top:26px;display:flex;flex-direction:column;align-items:center;gap:16px;}
