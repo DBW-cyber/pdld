@@ -18,16 +18,19 @@ a.back{color:#265a86;text-decoration:none;font-size:14px;}
 .tag{display:inline-block;background:#e9eff6;color:#265a86;border-radius:4px;padding:1px 9px;font-size:12px;margin-right:8px;}
 .note{font-size:13px;color:#66758a;margin-top:30px;}
 .toprow{display:flex;justify-content:space-between;align-items:center;margin:0 0 18px;}
-.langflags{display:flex;gap:10px;align-items:center;}
-.langflags button{width:42px;height:42px;border-radius:50%;border:2.5px solid transparent;padding:0;background:none;cursor:pointer;line-height:0;opacity:.5;}
-.langflags button img{width:100%;height:100%;border-radius:50%;display:block;box-shadow:0 2px 6px rgba(90,110,140,.25);}
+a.backbtn{display:block;line-height:0;}
+a.backbtn img{width:46px;height:46px;display:block;}
+.langflags{display:flex;gap:18px;align-items:center;}
+.langflags button{width:46px;height:46px;border-radius:50%;border:2.5px solid transparent;padding:0;background:none;cursor:pointer;line-height:0;opacity:.55;position:relative;box-shadow:0 5px 10px rgba(70,90,120,.35);}
+.langflags button img{width:100%;height:100%;border-radius:50%;display:block;}
+.langflags button::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 32% 26%,rgba(255,255,255,.9),rgba(255,255,255,.28) 42%,rgba(255,255,255,0) 62%),radial-gradient(circle at 50% 118%,rgba(20,40,70,.30),rgba(20,40,70,0) 55%);box-shadow:inset 0 -5px 8px rgba(20,40,70,.20),inset 0 3px 5px rgba(255,255,255,.35);pointer-events:none;}
 .langflags button.on{opacity:1;border-color:#265a86;}
 </style>
 </head>
 <body>
 <main>
 <div class="toprow">
-  <a class="back" href="index.html" id="backLink">← WCM日報トップへ戻る</a>
+  <a class="backbtn" href="index.html" id="backLink" title="WCM日報トップへ戻る"><img src="icons/icon-back.webp" alt="戻る"></a>
   <div class="langflags">
     <button type="button" data-lang="zh" title="中文" onclick="setLang('zh')"><img src="icons/flag-cn.svg" alt="中文"></button>
     <button type="button" data-lang="ja" title="日本語" onclick="setLang('ja')"><img src="icons/flag-jp.svg" alt="日本語"></button>
@@ -89,7 +92,7 @@ function setLang(l){
   var t = I18N[l]; if(!t) return;
   document.documentElement.lang = t.htmlLang;
   document.title = t.docTitle;
-  document.getElementById("backLink").innerHTML = t.back;
+  var bl = document.getElementById("backLink"); if(bl) bl.title = t.back.replace(/^(←|&larr;)\s*/,"");
   document.getElementById("pageTitle").textContent = t.title;
   document.getElementById("pageSub").textContent = t.sub;
   var card = document.getElementById("card1");
