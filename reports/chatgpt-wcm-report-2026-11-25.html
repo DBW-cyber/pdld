@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WCM世界成長株ファンド｜投資デューデリジェンス・価格シナリオリポート</title>
+<style>
+:root{
+  --navy:#142b46;
+  --blue:#265a86;
+  --ink:#243346;
+  --muted:#66758a;
+  --line:#dce4ed;
+  --paper:#ffffff;
+  --bg:#edf2f7;
+  --gold:#b48735;
+  --green:#187450;
+  --red:#ad3740;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+  line-height:1.9;
+}
+main{max-width:1120px;margin:28px auto;background:var(--paper)}
+header{
+  background:linear-gradient(125deg,#142b46,#285d87);
+  color:white;padding:48px 46px;
+}
+.eyebrow{font-size:12px;letter-spacing:3px;color:#c7d8e9}
+h1{font-size:32px;line-height:1.4;margin:14px 0}
+.subtitle{color:#d7e4ef;font-size:17px}
+.meta{margin-top:22px;font-size:14px;color:#d7e4ef;line-height:1.8}
+.content{padding:28px 46px 46px}
+section{margin:32px 0}
+h2{
+  font-size:23px;color:var(--navy);padding-bottom:9px;
+  border-bottom:2px solid var(--line);
+}
+h3{font-size:18px;color:var(--blue);margin-top:23px}
+p{margin:12px 0}
+a{color:var(--blue);overflow-wrap:anywhere}
+.source{font-size:12px;white-space:nowrap}
+.notice,.callout,.warning{
+  padding:17px 20px;margin:18px 0;border-left:4px solid var(--blue);
+  background:#f0f5fa;
+}
+.warning{border-color:var(--gold);background:#fff8e9}
+.callout{border-color:var(--green);background:#eff8f3}
+.small{font-size:13px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{padding:18px;border:1px solid var(--line);border-radius:8px}
+.card .label{font-size:12px;color:var(--muted)}
+.card .value{font-size:23px;font-weight:700;color:var(--navy)}
+.card p{font-size:13px;margin:6px 0}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+th{
+  background:var(--navy);color:white;text-align:left;
+  padding:11px 12px;vertical-align:top;
+}
+td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#f7f9fc}
+.formula{
+  padding:15px 18px;background:#162c43;color:#e9f1f8;
+  font-family:Consolas,monospace;overflow-x:auto;border-radius:6px;
+}
+.good{color:var(--green);font-weight:700}
+.bad{color:var(--red);font-weight:700}
+ul,ol{padding-left:23px}
+li{margin:7px 0}
+nav{
+  display:flex;flex-wrap:wrap;gap:10px 16px;
+  padding:15px 0;border-bottom:1px solid var(--line);font-size:13px;
+}
+nav a{text-decoration:none}
+label{display:block;font-size:13px;color:var(--muted)}
+input{
+  width:100%;padding:10px;border:1px solid #bfcddd;
+  border-radius:5px;font-size:15px;margin-top:5px;
+}
+button{
+  background:var(--blue);color:white;border:0;border-radius:5px;
+  padding:11px 18px;cursor:pointer;font-size:14px;
+}
+#calcResult{
+  padding:15px;margin-top:14px;background:#edf6f0;
+  border:1px solid #cce1d2;font-weight:700;
+}
+footer{
+  border-top:1px solid var(--line);padding-top:20px;
+  font-size:12px;color:var(--muted);
+}
+.backlink{font-size:14px;margin-bottom:6px}
+@media(max-width:760px){
+  main{margin:0}
+  header{padding:30px 22px}
+  .content{padding:20px 22px}
+  h1{font-size:26px}
+  .grid{grid-template-columns:1fr}
+  table{min-width:640px}
+}
+@media print{
+  body{background:white;font-size:11pt}
+  main{margin:0;max-width:none}
+  header{background:#142b46 !important;print-color-adjust:exact}
+  .content{padding:20px}
+  nav,.calculator,.print-button{display:none}
+  section{break-inside:auto}
+  tr,.card,.notice,.warning{break-inside:avoid}
+  a{color:inherit;text-decoration:none}
+  th{print-color-adjust:exact}
+}
+</style>
+</head>
+
+<body>
+<main>
+<header>
+  <div class="eyebrow">INDEPENDENT FUND DUE DILIGENCE</div>
+  <h1>WCM世界成長株ファンド<br>投資デューデリジェンス・価格シナリオリポート</h1>
+  <div class="subtitle">
+    調査対象：WCM 世界成長株厳選ファンド（予想分配金提示型）
+  </div>
+  <div class="meta">
+    レポート日付：2026年11月25日<br>
+    作成者：ChatGPT（AI）<br>
+    調査視点：機関投資家的なファンド選定、リスクバジェット、トータルリターン分析<br>
+    性質：AI支援による独立研究。WCMおよびファンド運用会社の公式レポートではない。<br>
+    ※本ページは中国語原稿の日本語訳である。
+  </div>
+</header>
+
+<div class="content">
+
+<p class="backlink"><a href="../reports.html">← レポートリンク集に戻る</a>　｜　<a href="../index.html">WCM日報トップへ</a></p>
+
+<div class="notice">
+  <strong>立場とエビデンスに関する声明</strong><br>
+  本レポートはプロフェッショナルなファンド・デューデリジェンスの枠組みを用いているが、作成者は実在の免許を持つファンドマネージャーではなく、WCMの投資チームへのヒアリングも行っておらず、非公開の保有銘柄・取引記録・リアルタイム評価システムにもアクセスしていない。「調査判断」は格付機関の認証ではなく、収益を保証するものでもない。正式な投資判断にあたっては、最新の法定書類、個人のリスク許容度、口座の投資適格性、適用される税制をあわせて確認すること。
+</div>
+
+<nav aria-label="レポート目次">
+  <a href="#summary">投資結論</a>
+  <a href="#evidence">エビデンス監査</a>
+  <a href="#method">投資手法</a>
+  <a href="#portfolio">ポートフォリオ・リスク</a>
+  <a href="#performance">パフォーマンス検証</a>
+  <a href="#valuation">バリュエーション評価</a>
+  <a href="#forecast">価格シナリオ</a>
+  <a href="#distribution">分配金評価</a>
+  <a href="#monitor">判断条件</a>
+  <a href="#sources">出典</a>
+</nav>
+
+<section id="summary">
+<h2>01｜エグゼクティブサマリーと投資委員会の見解</h2>
+
+<div class="grid">
+  <div class="card">
+    <div class="label">現在の調査スタンス</div>
+    <div class="value">中立・観察</div>
+    <p>底打ちを確認したとは認定せず、過去の優れたリターンだけを根拠に「買い」へ格上げもしない。</p>
+  </div>
+  <div class="card">
+    <div class="label">ポートフォリオ上の役割</div>
+    <div class="value">アクティブ成長サテライト</div>
+    <p>これは本レポートの配分判断であり、商品の公式リスク等級ではない。</p>
+  </div>
+  <div class="card">
+    <div class="label">価格判断の信頼度</div>
+    <div class="value">限定的</div>
+    <p>投資メカニズムは分析できるが、短期価格については最新の完全な保有銘柄と較正済みモデルが不足している。</p>
+  </div>
+</div>
+
+<div class="callout">
+  <strong>核心的な見方：</strong>
+  WCMを調査する価値があるのは、企業の競争優位性・企業文化・構造的成長に対する深い銘柄選定にある。警戒すべき弱点は、集中保有、テーマ間に潜む相関、為替エクスポージャー、そして比較的高いコストである。毎月の分配はキャッシュ分配の仕組みであって、低リスクな収入源ではない。
+</div>
+
+<p>
+  長期投資家にとって、本レポートが注目するのは「基準価額がいつ1万円に戻るか」ではなく、<strong>運用者がコスト控除後も、スタイルとリスクで調整した超過収益を持続的に生み出せるか</strong>である。キャッシュフローを重視する投資家にとっての焦点は、<strong>受け取る現金に資本価値の低下が伴っていないか、そして税引後の総資産が増えているか</strong>である。
+</p>
+
+<p>
+  投資手法には識別可能な特徴があるが、それは現在の価格に魅力があることの証明にはならない。本レポートは、較正を経ていない従来の楽観的な価格レンジを、正式な目標価格としては採用しない。
+</p>
+</section>
+
+<section id="evidence">
+<h2>02｜エビデンス監査：分かっていること、いないこと</h2>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>項目</th><th>エビデンスと日付</th><th>本レポートでの扱い</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>ファンドの法的構造とルール</td>
+<td>公式の交付目論見書（2026年11月25日版）</td>
+<td>投資手法、費用、分配、取引ルールの確認に使用。
+<a class="source" href="#s1">[S1]</a></td>
+</tr>
+<tr>
+<td>検証可能な直近の公式サイト基準価額スナップショット</td>
+<td>2026年11月20日：分配型 10,051円</td>
+<td>当該日付のスナップショットとしてのみ扱い、11月25日の最新基準価額とは呼ばない。
+<a class="source" href="#s5">[S5]</a></td>
+</tr>
+<tr>
+<td>9,983円の起点</td>
+<td>ユーザー提供のスクリーンショット：2026年11月24日</td>
+<td>シナリオ計算の入力として使用。今回は当日の公式基準価額を独立には検証していない。</td>
+</tr>
+<tr>
+<td>保有銘柄・ウエイト・市場データ</td>
+<td>スクリーンショットによればウエイトは2026年10月30日基準、株価は11月24日基準</td>
+<td>ユーザー資料に属する。11月25日時点のリアルタイム実ポジションとして扱わない。</td>
+</tr>
+<tr>
+<td>公式の保有構造</td>
+<td>目論見書に記載の2026年8月31日時点の過去スナップショット</td>
+<td>過去のリスク構造の理解に使用し、現在の完全なポートフォリオへ外挿しない。
+<a class="source" href="#s1">[S1]</a></td>
+</tr>
+<tr>
+<td>2026年11月25日の分配結果</td>
+<td>今回は当期の正式発表を取得していない</td>
+<td>条件付きの判断のみ示し、確定した分配金額としては書かない。</td>
+</tr>
+<tr>
+<td>元のウェブページ</td>
+<td>今回のツールアクセスは成功しなかった</td>
+<td>ユーザーのスクリーンショットを使用。ウェブページの生データや計算コードを読んだとは主張しない。</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="warning">
+<strong>撤回または厳格化すべき従来の判断：</strong>
+<ul>
+<li>評価日が混在した「10銘柄の寄与度－0.33ポイント」を、同日のファンドの下落－0.68%の要因として帰属させることはできない。</li>
+<li>評価のタイミング関係を確認する前に、三星（サムスン）の前日上昇を翌期の基準価額へ二重に数えることはできない。</li>
+<li>ADRと現地株式の異なる取引時間帯の値動きから、裁定機会や翌日の必然的なキャッチアップ上昇を直接導くことはできない。</li>
+<li>スクリーンショット中の「ChatGPT試算の評価額」を、独立に検証された目標価格として扱うことはできない。</li>
+<li>最新の完全な保有銘柄と統一された収益系列がない以上、現在のベータ、最大ドローダウン、予測の的中率を測定したとは主張できない。</li>
+</ul>
+</div>
+
+<p class="small">
+本レポートでは「公式開示」「ユーザー提供」「調査上の推論」「シナリオ仮定」を区別する。出典自体が運用会社のマーケティング資料である場合、それは独立した監査を経た投資結論と同等ではない。
+</p>
+</section>
+
+<section id="method">
+<h2>03｜投資手法：WCMが実際に賭けているもの</h2>
+
+<h3>3.1 企業リサーチからポートフォリオ構築へ</h3>
+<p>
+公式に開示された枠組みには、経済的な堀（モート）、企業文化、構造的成長、集中投資、バリュエーションが含まれる。本質的にはボトムアップの企業選定であり、世界の株式指数を単純に複製するものではない。
+<a class="source" href="#s2">[S2]</a>
+</p>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>調査の次元</th><th>本レポートの専門的解釈</th><th>検証すべき反対側の問い</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>堀（モート）</td>
+<td>競争優位が強化され、長期キャッシュフローへ転化できる企業を探す。</td>
+<td>その優位は本物の顧客の粘着性によるものか、それとも短期的な需給逼迫によるものか？</td>
+</tr>
+<tr>
+<td>企業文化</td>
+<td>経営層のインセンティブ、人材組織、実行力を長期成長の手がかりとして扱う。</td>
+<td>文化の判断は経営結果によって反証可能か、それとも美しい物語を形作るだけか？</td>
+</tr>
+<tr>
+<td>構造的成長</td>
+<td>単一四半期の景気ではなく、需要が長期的に拡大する領域を探す。</td>
+<td>受注の伸びは売上、利益、フリーキャッシュフローへ実際に転化するか？</td>
+</tr>
+<tr>
+<td>集中投資</td>
+<td>少数の高確信の判断がポートフォリオに十分な影響を与えるようにする。</td>
+<td>異なる企業が、実際には同じ設備投資サイクルや資金調達サイクルに依存していないか？</td>
+</tr>
+<tr>
+<td>バリュエーション</td>
+<td>良い企業でも、合理的な買値が必要である。</td>
+<td>利益成長はすでに株価へ十分に織り込まれていないか？</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3>3.2 ポジション管理：確信度駆動であり、均等配分ではない</h3>
+<p>
+公式の2024年12月の投資事例紹介によれば、新規ポジションは通常およそ2%～5%から始まり、高確信の保有は約10%まで引き上げられることがあり、上昇して上限に触れた際には適宜削減する。競争優位が弱まった場合も、調整や売却を行う。これは過去の事例における運用の記述であり、現在の各銘柄のポジションを証明するものではない。
+<a class="source" href="#s3">[S3]</a>
+</p>
+
+<p><strong>調査上の推論：</strong>
+これは銘柄選定とポジションサイジングの双方に依存する戦略である。成功すれば少数の勝ち銘柄がリターンを大きく押し上げ得るが、失敗すれば少数の大きな誤りが損失を拡大させ得る。「株価下落後に運用者が買い増したかどうか」自体は正誤の証明にはならず、鍵はその投資テーゼが経営データによってなお支持されているかである。
+</p>
+
+<h3>3.3 投資手法への慎重な評価</h3>
+<ul>
+<li><strong>長所：</strong>枠組みに識別可能性があり、指数とは異なるポートフォリオを形成できる。</li>
+<li><strong>短所：</strong>文化と堀の判断には主観が伴い、明確な反証指標が必要である。</li>
+<li><strong>未証明：</strong>現在のドローダウンが一時的なスタイルの逆風なのか、一部の銘柄選定テーゼの失効なのか。</li>
+</ul>
+</section>
+
+<section id="portfolio">
+<h2>04｜ポートフォリオ・リスク：業種が跨っていても真の分散とは限らない</h2>
+
+<p>
+公式の2026年8月31日スナップショットによれば、マザーファンドの株式比率は約91.4%、資本財セクターは約28.7%であり、上位10銘柄のウエイト合計は約45.7%であった。これらの数字は過去の構造であり、11月25日の実際のエクスポージャーではない。
+<a class="source" href="#s1">[S1]</a>
+</p>
+
+<p><strong>調査上の推論：</strong>
+伝統的な業種ラベルだけでは、共通リスクを過小評価しかねない。例えば半導体、クラウド、電力設備は異なる分類に属していても、同じ設備投資拡大の波に同時に依存している可能性がある。業種の数ではなく、需要の源泉とキャッシュフローの相関を調べるべきである。
+</p>
+
+<h3>ユーザーのスクリーンショットにある10銘柄：機関投資家のデューデリジェンスで確認すべき指標</h3>
+<p class="small">
+下表は最新の保有銘柄の確認でも、銘柄ごとの売買推奨でもない。スクリーンショットに挙げられた企業について設計した、今後の確認用チェックリストである。
+</p>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>企業</th><th>確認すべき経営エビデンス</th><th>判断を変え得るリスク</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Rolls-Royce</td>
+<td>サービス収益、利益率、キャッシュ・コンバージョン、ガイダンスの達成度。</td>
+<td>成長がフリーキャッシュフローへ転化しない、またはバリュエーションが達成可能な利益を上回る。</td>
+</tr>
+<tr>
+<td>Siemens Energy</td>
+<td>受注の質、プロジェクト利益率、遂行リスク、キャッシュ回収。</td>
+<td>受注規模は拡大してもキャッシュフローやプロジェクト収益が悪化する。</td>
+</tr>
+<tr>
+<td>TSMC ADR</td>
+<td>先端プロセス需要、設備投資のリターン、利益率、海外展開コスト。</td>
+<td>需要の集中、投資リターンの低下、事業リスクの上昇。</td>
+</tr>
+<tr>
+<td>SharkNinja</td>
+<td>チャネルの在庫、新製品の成長、マーケティング効率、キャッシュ回収。</td>
+<td>売上成長に在庫や費用の圧力を伴う。</td>
+</tr>
+<tr>
+<td>Welltower</td>
+<td>既存店の営業実績、資本コスト、資産リターン。</td>
+<td>営業改善が資金調達コストと買値をカバーできない。</td>
+</tr>
+<tr>
+<td>Samsung Electronics</td>
+<td>メモリ利益サイクル、製品ミックス、技術遂行、設備投資の規律。</td>
+<td>短期的な株価上昇を長期的な競争優位の回復と誤認する。</td>
+</tr>
+<tr>
+<td>Teva</td>
+<td>製品ポートフォリオ、キャッシュフロー、債務、重大な偶発債務。</td>
+<td>利益の回復が債務の改善へ転化しない。</td>
+</tr>
+<tr>
+<td>Microsoft</td>
+<td>クラウド事業の成長、AI収益の実現、設備投資後のキャッシュフロー。</td>
+<td>売上成長が投資とバリュエーションを補償できない。</td>
+</tr>
+<tr>
+<td>Meta Platforms</td>
+<td>広告効率、費用規律、設備投資のリターン。</td>
+<td>成長とキャッシュフローの間の溝が広がり続ける。</td>
+</tr>
+<tr>
+<td>Charles River Laboratories</td>
+<td>受注、顧客の資金調達環境、稼働率、コスト調整。</td>
+<td>需要回復の後ずれ、または利益改善が一時的要因に依存する。</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="warning">
+<strong>重要な区別：</strong>
+低レバレッジは資金調達圧力を和らげるが、それは自動的には金利感応度が低いことを意味しない。事業リスク、バリュエーション・リスク、市場のスタイル・リスクは分けて評価しなければならない。
+</div>
+
+<h3>為替リスクは別途バジェットすべき</h3>
+<p>
+このファンドは原則として円への為替ヘッジを行わない。外貨が円に対して下落すれば、外貨建て資産の円換算価値は押し下げられる。
+<a class="source" href="#s1">[S1]</a>
+</p>
+<p>
+本レポートは米ドル／円を為替エクスポージャー全体の代用品とはしない。正式な予測では、米ドル、ユーロ、英ポンド、韓国ウォンなど実際の資産の建値通貨を個別にモデル化し、採用する証券の形態と評価為替レートを確認すべきである。
+</p>
+</section>
+
+<section id="performance">
+<h2>05｜パフォーマンス検証：下落のすべてを分配のせいにはできない</h2>
+
+<p>
+公式の第3四半期レポートによれば、2026年6月末から9月末にかけて、分配型の公表基準価額は13,133円から11,360円へ下落した。税引前分配金再投資ベースのリターンは約－7.4%、同期間の参考指数は約－0.6%であった。
+<a class="source" href="#s4">[S4]</a>
+</p>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>公式の概算要因</th><th>公表基準価額への影響</th><th>調査上の含意</th></tr>
+</thead>
+<tbody>
+<tr><td>株式</td><td>－661円</td><td>ポートフォリオの投資成果そのものが重しとなった。</td></tr>
+<tr><td>為替</td><td>－258円</td><td>円建てのリスクは無視できない。</td></tr>
+<tr><td>分配</td><td>－800円</td><td>現金の支払いは基準価額を下げるが、投資損失とは同義ではない。</td></tr>
+<tr><td>その他</td><td>－53円</td><td>費用等の影響。要因分解は概算である。</td></tr>
+</tbody>
+</table>
+</div>
+<p class="small">
+内訳と合計の間には四捨五入による差異があり得る。以上は運用会社の概算である。出典：公式の2026年10月ドローダウン・レポート。<a href="#s4">[S4]</a>
+</p>
+
+<div class="callout">
+<strong>投資委員会の解釈：</strong>
+「基準価額の下落のすべてが損失ではない」は成り立つ。しかし「下落は主に分配によるもので、投資成果を心配する必要はない」は成り立たない。この期間には実際の投資損失と、参考指数に対する明確なアンダーパフォーマンスが存在した。
+</div>
+
+<h3>運用者の能力を証明するには、さらに何が必要か</h3>
+<ul>
+<li>同一の日付、同一の通貨、同一の分配の取扱いで比較すること。</li>
+<li>世界市場全体のリターン、成長スタイルのリターン、銘柄選択の寄与を切り分けること。</li>
+<li>最も良い一年だけではなく、複数の市場サイクルで検証すること。</li>
+<li>下落局面での捕捉率、ドローダウンからの回復期間、テールリスクを評価すること。</li>
+<li>他のコンポジットの費用控除前リターンと混同せず、費用控除後のファンドの実績を用いること。</li>
+</ul>
+
+<p>
+今回はこれらの検証に必要な、完全で統一された系列が不足しているため、アルファ、ベータ、インフォメーション・レシオ、シャープ・レシオ、現在の最大ドローダウンは計算も捏造もしない。
+</p>
+</section>
+
+<section id="valuation">
+<h2>06｜バリュエーションと費用：良い手法でも、どんな価格でも買ってよいわけではない</h2>
+
+<h3>6.1 安易に「割高なテクノロジー・ファンド」とレッテルを貼れない</h3>
+<p>
+公式の2026年8月末ポートフォリオ特性によれば、マザーファンドの予想PERは約14.3倍、参考指数は約16.1倍。実績PERはそれぞれ約22.1倍と約20.9倍であった。これは当時の運用会社の統計にすぎず、11月25日のポートフォリオ評価として使えるものではない。
+<a class="source" href="#s4">[S4]</a>
+</p>
+
+<p><strong>調査上の推論：</strong>
+過去の予想PERが高くなかったことは、さらに調べる価値がある。しかし割安の証明にはならない。将来利益の予想は下方修正され得るし、業種構成も利益の景気循環も異なる。計算方法、赤字企業の扱い、予想期間、キャッシュ比率を確認しなければならない。したがって本レポートは「成長株は必然的に割高」も「予想PERが低ければ必ず割安」も受け入れない。
+</p>
+
+<h3>6.2 費用は明確な投資ハードルである</h3>
+<p>
+公式の目論見書には、年率の信託報酬1.958%（税込）が記載されている。購入時手数料は販売会社が定め、上限は3.3%であり、その他の費用も存在する。公表基準価額にはファンドの関連費用がすでに控除されている。
+<a class="source" href="#s1">[S1]</a>
+</p>
+
+<p>
+純粋な比較の仮定として、別の商品の年率費用が0.20%であれば、信託報酬の差だけを見ても、WCMはその費用差を相殺するために年あたり約1.758ポイントの追加リターンが必要になる。これは税引後の完全な比較ではなく、特定の代替商品を名指しするものでもない。
+</p>
+
+<div class="warning">
+<strong>二重控除の防止：</strong>
+ファンドの実現した基準価額リターンを用いる際は、信託報酬を再度差し引いてはならない。株式と為替からボトムアップで予測する場合にのみ、費用を明示的に加える必要がある。以下のシナリオモデルは後者に属する。
+</div>
+</section>
+
+<section id="forecast">
+<h2>07｜価格見通し：条件付き予測であり、偽りの精密な目標価格ではない</h2>
+
+<h3>7.1 更新された方向感</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>観察期間</th><th>本レポートの判断</th><th>判断を引き上げる条件</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>2026年12月25日前後まで</td>
+<td>中立から慎重。趨勢的な反発は確認しない。</td>
+<td>保有銘柄の改善が広がり、利益予想が安定し、為替の重しが続かないこと。</td>
+</tr>
+<tr>
+<td>2027年2月25日前後まで</td>
+<td>中立。決算と経営の実現をより重視する。</td>
+<td>価格の反発だけでなく、受注、キャッシュフロー、ガイダンスの改善が見えること。</td>
+</tr>
+<tr>
+<td>2027年5月25日前後まで</td>
+<td>回復の余地はあるが、明確な下落シナリオを残す。</td>
+<td>競争優位のテーゼが実現し、ポートフォリオのトータルリターンが回復し、リスク・エクスポージャーが合理的であること。</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p class="small">
+日付は調査の観察ウィンドウであり、その日に基準価額が公表されることや、その日までに特定の価格へ到達することを約束するものではない。方向感は、限られたエビデンスに基づく調査上の推論である。
+</p>
+
+<h3>7.2 6か月の価格モデル</h3>
+<p>
+根拠のない価格を避けるため、再計算可能な単純化モデルを用いる。
+</p>
+
+<div class="formula">
+V* = V0 × {1 + a × [(1 + q) × (1 + f) − 1]} × (1 − c)
+</div>
+
+<ul>
+<li><strong>V0：</strong>9,983円。ユーザーが11月24日に提供したスクリーンショットの入力を採用。</li>
+<li><strong>a：</strong>株式比率の仮定90%。現在の検証済みウエイトではない。</li>
+<li><strong>q：</strong>6か月の株式バスケットの現地通貨トータルリターンの仮定。配当を含む。</li>
+<li><strong>f：</strong>株式バスケットの加重平均した外貨対円変動の仮定。正の値は円建て基準価額に有利。</li>
+<li><strong>c：</strong>6か月の信託報酬の近似値0.979%（1.958%の半分）。</li>
+<li><strong>V*：</strong>将来のファンド分配を支払わない場合の等価基準価額。公表基準価額の約束ではない。</li>
+</ul>
+
+<p class="small">
+このモデルは通貨と保有銘柄の間の相互作用、費用控除の経路、キャッシュの収益を単純化している。取引コスト、その他の費用、売買回転は含めていない。q、f、aはいずれもシナリオ入力であり、歴史的な較正は行っていない。
+</p>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>6か月シナリオ</th>
+<th>株式リターン q</th>
+<th>為替影響 f</th>
+<th>等価基準価額（概算）</th>
+<th>経済条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="bad">ストレス</td>
+<td>－20%</td>
+<td>－5%</td>
+<td class="bad">7,750円</td>
+<td>利益またはバリュエーションが圧迫され、外貨が円に対して下落する。</td>
+</tr>
+<tr>
+<td>穏やかな回復</td>
+<td>＋8%</td>
+<td>0%</td>
+<td>10,600円</td>
+<td>株式バスケットが成長を回復し、バリュエーションと為替から追加の大きな重しが生じない。</td>
+</tr>
+<tr>
+<td class="good">力強い回復</td>
+<td>＋20%</td>
+<td>＋3%</td>
+<td class="good">11,980円</td>
+<td>主力テーマが全面的に改善し、同時に為替が有利に働く。</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="warning">
+<strong>これらの数字の読み方：</strong>
+これらは「仮定が成り立てば、価格はどうなるか」であって、「市場がその価格へ到達する確率がどれほどか」ではない。3つのシナリオはすべての可能な結果をカバーせず、信頼区間を構成するものでもない。実際の損失はストレスシナリオより大きくなる可能性がある。本レポートは、推定していないシナリオ確率を付与せず、偽りに精密な加重目標価格も計算しない。
+</div>
+
+<h3>7.3 分配の段階に戻るには何が必要か</h3>
+<p>
+9,983という入力だけから計算すると、将来の分配を考慮しない場合、11,000へ到達するには約10.2%の基準価額上昇が、12,000へは約20.2%の上昇が必要になる。これは算術的なハードルにすぎず、回帰目標でもテクニカルな抵抗線でもない。
+</p>
+
+<h3>7.4 なぜ信頼できる日次の価格を示さないのか</h3>
+<p>
+日次の評価には、統一された市場日付、実際の保有証券、最新のウエイト、アジアの当日終値、運用会社の評価為替レートが必要である。スクリーンショットではこれらの条件を満たせない。10銘柄の部分的な寄与はポートフォリオ全体の代わりにはならず、本レポートは9,920や9,950を完全な11月25日の基準価額予測として包装することはしない。
+</p>
+
+<div class="calculator">
+<h3>調整可能な6か月シナリオ計算機</h3>
+<p class="small">
+感応度分析専用である。リアルタイム相場は呼び出さず、分配を自動予測することもない。
+</p>
+<div class="grid">
+  <div><label for="v0">開始基準価額（円／万口）</label>
+    <input id="v0" type="number" value="9983" min="1"></div>
+  <div><label for="equity">株式比率（%）</label>
+    <input id="equity" type="number" value="90" min="0" max="100"></div>
+  <div><label for="stock">株式バスケットの現地通貨トータルリターン（%）</label>
+    <input id="stock" type="number" value="8" step="0.1"></div>
+  <div><label for="fx">バスケット加重平均の外貨対円変動（%）</label>
+    <input id="fx" type="number" value="0" step="0.1"></div>
+  <div><label for="fee">6か月の費用近似値（%）</label>
+    <input id="fee" type="number" value="0.979" min="0" max="100" step="0.001"></div>
+</div>
+<p><button type="button" onclick="calculate()">シナリオを計算</button></p>
+<div id="calcResult" role="status" aria-live="polite"></div>
+</div>
+</section>
+
+<section id="distribution">
+<h2>08｜分配の仕組みと2026年11月25日の判断</h2>
+
+<p>
+公式ルールでは、原則として決算日の前営業日の基準価額を参照する。11,000円未満の場合は状況に応じて判断され、それ以外の段階は以下のとおりである。運用会社は、分配可能額が不足する場合や決算直前に急激な変動が生じた場合、分配を調整したり見送ったりする可能性を留保している。
+<a class="source" href="#s1">[S1]</a>
+</p>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>前営業日の基準価額</th><th>万口あたり税引前の目標分配</th></tr>
+</thead>
+<tbody>
+<tr><td>11,000円未満</td><td>基準価額の水準等の要因に応じて判断</td></tr>
+<tr><td>11,000以上12,000未満</td><td>200円</td></tr>
+<tr><td>12,000以上13,000未満</td><td>300円</td></tr>
+<tr><td>13,000以上14,000未満</td><td>400円</td></tr>
+<tr><td>14,000以上</td><td>500円</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout">
+<strong>当期の調査判断：</strong>
+2026年11月24日の9,983円という入力が正確であれば、当期は11,000未満の裁量ゾーンに属する。「分配なし」が傾向シナリオであり、100円が代替案である。ただし正確な確率を付与するに足るエビデンスはなく、最終的には当期の公式発表をもって確認しなければならない。
+</div>
+
+<p>
+上記の傾向は、公式サイトの記録で低基準価額の局面に分配見送りが複数回あったこと、および2026年10月26日に100円が分配された歴史を参照したものであり、「10,000未満なら必ず分配なし」という正式ルールではない。
+<a class="source" href="#s5">[S5]</a>
+</p>
+
+<h3>分配後の価格と投資家の総資産</h3>
+<div class="formula">
+Vt = V(t−1) × (1 + Rt) − Dt
+</div>
+<p>
+Rtは分配前で、対応する費用の影響を含むリターンでなければならない。Dtは万口あたり税引前の分配である。分配前の基準価額が9,920で100を分配すれば、公表基準価額は約9,820になる。この100はファンドの純資産から出るものであり、新たに生み出された富ではない。
+<a class="source" href="#s1">[S1]</a>
+</p>
+
+<p>
+複数期間にわたる予測では、期間ごとに分配を差し引き、その後のリターンの経路を処理しなければならず、最終基準価額から累積分配を引くことで単純に代替することはできない。個人の実際のリターンは税務、現金の再投資の有無、売買のタイミングにも依存するため、本レポートは個人の税引後リターンを推定しない。
+</p>
+</section>
+
+<section id="monitor">
+<h2>09｜投資委員会の判断条件とリスクバジェット</h2>
+
+<h3>より積極的な見方へ引き上げるには、以下が同時に必要</h3>
+<ol>
+<li>最新の公式保有銘柄を取得し、主力保有の変化とリスク集中度を確認すること。</li>
+<li>主要な投資テーゼが経営データとキャッシュフローデータに支持されること。</li>
+<li>分配後の基準価額の一時的な反発ではなく、費用控除後のトータルリターンが改善すること。</li>
+<li>参考市場に対する相対パフォーマンスの悪化が止まること。</li>
+<li>買値のバリュエーションが利益予想の誤差を吸収できること。</li>
+</ol>
+
+<h3>見方の引き下げ、または再審査が必要なサイン</h3>
+<ul>
+<li>主力保有企業の競争優位、キャッシュフロー、経営ガイダンスが悪化し続ける。</li>
+<li>複数の保有銘柄が、共通の需要サイクルの反転から同時に打撃を受ける。</li>
+<li>売買回転が増えるのに、そのリスクとリターンの改善ロジックが説明できない。</li>
+<li>株式の下落と円高が重なる。</li>
+<li>投資家が実際には安定したキャッシュフローを必要としながら、保証のない毎月の分配に依存している。</li>
+</ul>
+
+<h3>ポジションは目標リターンからではなく、許容損失から逆算する</h3>
+<div class="formula">
+例示の最大ポジション ≈ 許容できるポートフォリオ損失バジェット ÷ ファンドのストレス損失の仮定
+</div>
+<p>
+純粋な例示：この投資に充てる総資産の損失バジェットが3%、ストレス損失の仮定が40%であれば、算術的なポジションは7.5%になる。これは個人向けの配分提案ではない。関連する保有が同時に下落すること、流動性、より深刻なテール損失は、さらに低いポジションを求める可能性がある。
+</p>
+
+<h3>分配型と資産成長型は用途で選ぶべき</h3>
+<p>
+公式には、資産成長型は原則として分配を抑制し複利効果を追求する。分配型は毎月決算を行い、ルールに基づいて分配を決める。両者の価格水準を直接比べて「割高・割安」を言うことはできない。
+<a class="source" href="#s1">[S1]</a>
+</p>
+<p>
+本レポートが勧める調査方法は、同一の口径でトータルリターン、費用、実際のキャッシュフロー需要を比較することであり、一方の基準価額が低いから、あるいは他方の過去の分配が高いからという理由で選ぶことではない。
+</p>
+</section>
+
+<section>
+<h2>10｜最終評価：調査価値はあるが、買いの論証はまだ完成していない</h2>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>次元</th><th>本レポートの定性的結論</th><th>結論の限界</th></tr>
+</thead>
+<tbody>
+<tr><td>投資フレームワーク</td><td>識別可能性があり、継続して追う価値がある。</td><td>手法の独自性は有効性を意味しない。</td></tr>
+<tr><td>リスク構造</td><td>集中度、スタイル、為替をあわせて管理する必要がある。</td><td>現在のエクスポージャーは完全には検証されていない。</td></tr>
+<tr><td>現在のバリュエーション</td><td>割安とも割高とも確認できない。</td><td>最新のポートフォリオ評価と予想の確認が不足。</td></tr>
+<tr><td>運用者の超過収益能力</td><td>手元の材料だけでは認証を完了できない。</td><td>統一された収益系列とスタイル要因分析が不足。</td></tr>
+<tr><td>キャッシュフロー属性</td><td>保証された収入として理解するのに適さない。</td><td>将来の分配金額は保証されない。</td></tr>
+<tr><td>短期価格</td><td>方向感は慎重寄り。</td><td>偽りに精密な日次目標は示さない。</td></tr>
+<tr><td>6か月見通し</td><td>中立・観察。回復と下落の双方を残す。</td><td>シナリオの数字は確率で較正されていない。</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout">
+<strong>最終見解：</strong>
+WCMは高確信の企業選定を通じて長期的価値を生み出す可能性がある。しかし本レポートのエビデンス範囲では、「すでに底を打った」や「直ちに大きく組み入れるべき」を支持するには不十分である。優先課題は、最新の保有銘柄、経営の検証、リスク要因分析を補うことであり、価格予測の見かけの精度をさらに上げることではない。
+</div>
+</section>
+
+<section id="sources">
+<h2>11｜出典、監査状況、追加調査リスト</h2>
+
+<ol>
+<li id="s1">
+<strong>[S1] 朝日ライフ・アセットマネジメント公式 交付目論見書（2026年11月25日版）</strong><br>
+用途：投資プロセス、過去の保有銘柄、費用、取引および分配ルール。<br>
+<a href="https://www.alamco.co.jp/fund/WCM_ag/moku_k_WCM_000000.pdf" target="_blank" rel="noopener noreferrer">公式PDFを見る</a><br>
+<span class="small">注意：書類の発行日は、書類内の保有データの日付と等しいとは限らない。</span>
+</li>
+
+<li id="s2">
+<strong>[S2] 公式 全保有銘柄の紹介（2025年12月30日基準）</strong><br>
+用途：投資哲学の確認。2026年11月の最新保有の認定には使用しない。<br>
+<a href="https://www.alamco.co.jp/fund/news/pdf/wcm_20251230.pdf" target="_blank" rel="noopener noreferrer">公式PDFを見る</a>
+</li>
+
+<li id="s3">
+<strong>[S3] 公式 投資事例：AppLovin（2024年12月）</strong><br>
+用途：過去のポジション構築、ポジション調整、集中投資の方法の確認。<br>
+<a href="https://www.alamco.co.jp/fund/news/pdf/wcm_20241210.pdf" target="_blank" rel="noopener noreferrer">公式PDFを見る</a>
+</li>
+
+<li id="s4">
+<strong>[S4] 公式 ドローダウン・レポート（2026年10月公表）</strong><br>
+用途：2026年第3四半期の要因分析、8月末のポートフォリオ特性。<br>
+<a href="https://www.alamco.co.jp/newsrelease/2026/rmho650000008e34-att/wcm_20261019.pdf" target="_blank" rel="noopener noreferrer">公式PDFを見る</a><br>
+<span class="small">
+運用会社の要因分析は概算である。予想PERは過去のスナップショットであり、現在の評価ではない。
+</span>
+</li>
+
+<li id="s5">
+<strong>[S5] 分配型ファンドの公式ページ</strong><br>
+用途：今回の検索で得られた2026年11月20日の基準価額スナップショット、過去の分配、リターンの口径。<br>
+<a href="https://www.alamco.co.jp/fund/WCM_es/index.html?tab=reportBlock" target="_blank" rel="noopener noreferrer">公式ページを見る</a><br>
+<span class="small">動的ウェブページは更新され得る。データの注記日付を基準とすること。</span>
+</li>
+
+<li>
+<strong>[U1] ユーザー提供のWCM日報スクリーンショット</strong><br>
+用途：9,983円の計算起点、10銘柄のリスト、ウェブページの評価口径の審査。<br>
+<span class="small">
+スクリーンショット中の相場、財務数値、イベント、評価は、すべてが独立に検証されたわけではない。
+</span>
+</li>
+</ol>
+
+<h3>バックテスト可能な正式な定量予測へ格上げするには、以下を補う必要がある</h3>
+<ul>
+<li>ファンドの完全な過去の基準価額、分配、統一されたトータルリターン系列。</li>
+<li>直近の公式保有銘柄とウエイト、および実際の証券形態の明示。</li>
+<li>対応する日付の評価為替レートと各市場の価格の時系列。</li>
+<li>費用、キャッシュ比率、売買回転、申込・解約の影響。</li>
+<li>口径の一致した参考市場とスタイル・ファクター。</li>
+<li>アウトオブサンプルでのバックテスト、区間のカバー率、テール誤差の検証。</li>
+</ul>
+
+<p class="small">
+今回は投資メカニズム、費用、正式な分配ルール、過去のドローダウン要因分析を検証した。11月25日の当期分配の発表、最新の完全な保有銘柄、統一モデルデータはまだ取得していない。これらの不足が、現在の価格予測と運用者能力の認証を制限している。
+</p>
+</section>
+
+<footer>
+<p>
+本レポートはAI支援による調査資料であり、WCM、朝日ライフ、規制当局、格付機関の公式見解ではない。個人の投資、法律、税務に関する助言を構成するものでもない。すべてのシナリオは仮定に依存し、過去のパフォーマンスは将来の結果を保証しない。作成者は実在のファンドマネージャーの身分や機関の支持を主張していない。
+</p>
+<p>
+バージョン：2026-11-25｜価格表示：円／万口｜
+価格計算の起点：ユーザーが提供した2026-11-24の基準価額9,983円。
+</p>
+<button class="print-button" type="button" onclick="window.print()">
+印刷／PDFとして保存
+</button>
+</footer>
+
+</div>
+</main>
+
+<script>
+function calculate(){
+  const read = id => Number(document.getElementById(id).value);
+  const ids = ["v0","equity","stock","fx","fee"];
+  const fields = ids.map(id => document.getElementById(id));
+  const result = document.getElementById("calcResult");
+
+  if(fields.some(field => field.value.trim() === "")){
+    result.textContent = "すべての入力欄を埋めてください。";
+    return;
+  }
+
+  const v0 = read("v0");
+  const a = read("equity") / 100;
+  const q = read("stock") / 100;
+  const f = read("fx") / 100;
+  const c = read("fee") / 100;
+
+  if(
+    ![v0,a,q,f,c].every(Number.isFinite) ||
+    v0 <= 0 || a < 0 || a > 1 ||
+    q < -1 || f <= -1 || c < 0 || c >= 1
+  ){
+    result.textContent =
+      "入力が無効です：基準価額は0より大きく、株式比率は0～100%、"
+      + "株式リターンは－100%未満不可、為替変動は－100%より大きく、"
+      + "費用は0～100%未満で入力してください。";
+    return;
+  }
+
+  const value = v0 * (1 + a * ((1 + q) * (1 + f) - 1)) * (1 - c);
+  const ret = (value / v0 - 1) * 100;
+
+  result.textContent =
+    "6か月シナリオの等価基準価額は約 "
+    + Math.round(value).toLocaleString("ja-JP")
+    + " 円。対応する変化率は約 "
+    + ret.toFixed(2)
+    + "%。将来のファンド分配は支払われず、その他の費用もすべては計上していない。これは確率予測ではない。";
+}
+calculate();
+</script>
+</body>
+</html>
