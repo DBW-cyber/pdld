@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WCM Global Growth Fund | Investment Due Diligence &amp; Price Scenario Report</title>
+<style>
+:root{
+  --navy:#142b46;
+  --blue:#265a86;
+  --ink:#243346;
+  --muted:#66758a;
+  --line:#dce4ed;
+  --paper:#ffffff;
+  --bg:#edf2f7;
+  --gold:#b48735;
+  --green:#187450;
+  --red:#ad3740;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:Georgia,"Times New Roman","Hiragino Sans","Noto Sans JP",serif;
+  line-height:1.9;
+}
+main{max-width:1120px;margin:28px auto;background:var(--paper)}
+header{
+  background:linear-gradient(125deg,#142b46,#285d87);
+  color:white;padding:48px 46px;
+}
+.eyebrow{font-size:12px;letter-spacing:3px;color:#c7d8e9}
+h1{font-size:32px;line-height:1.4;margin:14px 0}
+.subtitle{color:#d7e4ef;font-size:17px}
+.meta{margin-top:22px;font-size:14px;color:#d7e4ef;line-height:1.8}
+.content{padding:28px 46px 46px}
+section{margin:32px 0}
+h2{
+  font-size:23px;color:var(--navy);padding-bottom:9px;
+  border-bottom:2px solid var(--line);
+}
+h3{font-size:18px;color:var(--blue);margin-top:23px}
+p{margin:12px 0}
+a{color:var(--blue);overflow-wrap:anywhere}
+.source{font-size:12px;white-space:nowrap}
+.notice,.callout,.warning{
+  padding:17px 20px;margin:18px 0;border-left:4px solid var(--blue);
+  background:#f0f5fa;
+}
+.warning{border-color:var(--gold);background:#fff8e9}
+.callout{border-color:var(--green);background:#eff8f3}
+.small{font-size:13px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{padding:18px;border:1px solid var(--line);border-radius:8px}
+.card .label{font-size:12px;color:var(--muted)}
+.card .value{font-size:23px;font-weight:700;color:var(--navy)}
+.card p{font-size:13px;margin:6px 0}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+th{
+  background:var(--navy);color:white;text-align:left;
+  padding:11px 12px;vertical-align:top;
+}
+td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#f7f9fc}
+.formula{
+  padding:15px 18px;background:#162c43;color:#e9f1f8;
+  font-family:Consolas,monospace;overflow-x:auto;border-radius:6px;
+}
+.good{color:var(--green);font-weight:700}
+.bad{color:var(--red);font-weight:700}
+ul,ol{padding-left:23px}
+li{margin:7px 0}
+nav{
+  display:flex;flex-wrap:wrap;gap:10px 16px;
+  padding:15px 0;border-bottom:1px solid var(--line);font-size:13px;
+}
+nav a{text-decoration:none}
+label{display:block;font-size:13px;color:var(--muted)}
+input{
+  width:100%;padding:10px;border:1px solid #bfcddd;
+  border-radius:5px;font-size:15px;margin-top:5px;
+}
+button{
+  background:var(--blue);color:white;border:0;border-radius:5px;
+  padding:11px 18px;cursor:pointer;font-size:14px;
+}
+#calcResult{
+  padding:15px;margin-top:14px;background:#edf6f0;
+  border:1px solid #cce1d2;font-weight:700;
+}
+footer{
+  border-top:1px solid var(--line);padding-top:20px;
+  font-size:12px;color:var(--muted);
+}
+.backlink{font-size:14px;margin-bottom:6px}
+@media(max-width:760px){
+  main{margin:0}
+  header{padding:30px 22px}
+  .content{padding:20px 22px}
+  h1{font-size:26px}
+  .grid{grid-template-columns:1fr}
+  table{min-width:640px}
+}
+@media print{
+  body{background:white;font-size:11pt}
+  main{margin:0;max-width:none}
+  header{background:#142b46 !important;print-color-adjust:exact}
+  .content{padding:20px}
+  nav,.calculator,.print-button{display:none}
+  section{break-inside:auto}
+  tr,.card,.notice,.warning{break-inside:avoid}
+  a{color:inherit;text-decoration:none}
+  th{print-color-adjust:exact}
+}
+</style>
+</head>
+
+<body>
+<main>
+<header>
+  <div class="eyebrow">INDEPENDENT FUND DUE DILIGENCE</div>
+  <h1>WCM Global Growth Fund<br>Investment Due Diligence &amp; Price Scenario Report</h1>
+  <div class="subtitle">
+    Subject: WCM Global Growth Equity Fund (Projected-Distribution Type) — WCM 世界成長株厳選ファンド（予想分配金提示型）
+  </div>
+  <div class="meta">
+    Report date: November 25, 2026<br>
+    Author: ChatGPT (AI)<br>
+    Perspective: institutional fund selection, risk budgeting and total-return analysis<br>
+    Nature: AI-assisted independent research; not an official report of WCM or the fund manager.<br>
+    *This is the English edition. Japanese and Chinese editions are available from the language links at the top of the page.
+  </div>
+</header>
+
+<div class="content">
+
+<p class="backlink"><a href="../reports.html">&larr; Back to the report index</a> &nbsp;|&nbsp; <a href="../index.html">WCM daily report home</a> &nbsp;|&nbsp; Language: <a href="chatgpt-wcm-report-2026-11-25.zh.html">中文</a> | <a href="chatgpt-wcm-report-2026-11-25.html">日本語</a> | <strong>English</strong></p>
+
+<div class="notice">
+  <strong>Position and evidence statement</strong><br>
+  This report uses a professional fund due-diligence framework, but the author is not a real licensed fund manager, has not interviewed WCM's investment team, and has no access to non-public holdings, trading records or real-time valuation systems. A "research judgment" is not a rating-agency certification and does not guarantee returns. Formal investment decisions should be made together with the latest statutory documents, personal risk tolerance, account eligibility and applicable tax rules.
+</div>
+
+<nav aria-label="Report contents">
+  <a href="#summary">Conclusion</a>
+  <a href="#evidence">Evidence audit</a>
+  <a href="#method">Method</a>
+  <a href="#portfolio">Portfolio risk</a>
+  <a href="#performance">Performance</a>
+  <a href="#valuation">Valuation</a>
+  <a href="#forecast">Price scenarios</a>
+  <a href="#distribution">Distributions</a>
+  <a href="#monitor">Decision conditions</a>
+  <a href="#sources">Sources</a>
+</nav>
+
+<section id="summary">
+<h2>01 | Executive summary and investment-committee view</h2>
+
+<div class="grid">
+  <div class="card">
+    <div class="label">Current research stance</div>
+    <div class="value">Neutral / observe</div>
+    <p>We do not conclude that a bottom is in, nor upgrade to "buy" on historical returns alone.</p>
+  </div>
+  <div class="card">
+    <div class="label">Portfolio role</div>
+    <div class="value">Active growth satellite</div>
+    <p>This is the report's allocation judgment, not the product's official risk rating.</p>
+  </div>
+  <div class="card">
+    <div class="label">Confidence in price judgment</div>
+    <div class="value">Limited</div>
+    <p>The investment mechanism can be analysed; short-term prices lack the latest full holdings and a calibrated model.</p>
+  </div>
+</div>
+
+<div class="callout">
+  <strong>Core view:</strong>
+  What makes WCM worth studying is its deep stock selection on competitive advantage, corporate culture and structural growth. The weaknesses to watch are concentrated holdings, latent correlation across themes, currency exposure and relatively high fees. The monthly distribution is a cash-distribution mechanism, not a low-risk source of income.
+</div>
+
+<p>
+  For long-term investors, this report does not focus on "when the NAV gets back to 10,000", but on <strong>whether the manager can keep generating style- and risk-adjusted excess returns after fees</strong>. For cash-flow investors, the focus is <strong>whether the cash received comes with a decline in capital value, and whether after-tax total wealth increases</strong>.
+</p>
+
+<p>
+  The investment method is distinctive, but that does not prove the current price is attractive. This report does not adopt the earlier, uncalibrated optimistic price ranges as formal target prices.
+</p>
+</section>
+
+<section id="evidence">
+<h2>02 | Evidence audit: what we know, and what we do not</h2>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Item</th><th>Evidence and date</th><th>Treatment in this report</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Fund legal structure and rules</td>
+<td>Official prospectus, November 25, 2026 edition</td>
+<td>Used to verify the investment method, fees, distributions and trading rules.
+<a class="source" href="#s1">[S1]</a></td>
+</tr>
+<tr>
+<td>Latest verifiable official NAV snapshot</td>
+<td>November 20, 2026: distribution type JPY 10,051</td>
+<td>Treated only as that date's snapshot; not called the latest NAV as of November 25.
+<a class="source" href="#s5">[S5]</a></td>
+</tr>
+<tr>
+<td>JPY 9,983 starting point</td>
+<td>User-provided screenshot: November 24, 2026</td>
+<td>Used as a scenario-calculation input; the official NAV for that day was not independently verified this time.</td>
+</tr>
+<tr>
+<td>Holdings, weights and market data</td>
+<td>Screenshot states weights as of October 30, 2026 and prices as of November 24</td>
+<td>User material; not treated as real-time actual positions on November 25.</td>
+</tr>
+<tr>
+<td>Official holdings structure</td>
+<td>Historical snapshot as of August 31, 2026 in the prospectus</td>
+<td>Used to understand the historical risk structure; not extrapolated to the current full portfolio.
+<a class="source" href="#s1">[S1]</a></td>
+</tr>
+<tr>
+<td>November 25, 2026 distribution result</td>
+<td>The official announcement for this period was not obtained this time</td>
+<td>Only a conditional judgment is given; nothing is stated as a confirmed distribution amount.</td>
+</tr>
+<tr>
+<td>Original web page</td>
+<td>Tool access was unsuccessful this time</td>
+<td>User screenshots are used; no claim is made to have read the page's raw data or calculation code.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="warning">
+<strong>Earlier judgments that must be withdrawn or tightened:</strong>
+<ul>
+<li>The "ten-stock contribution of -0.33 points", computed with mixed valuation dates, cannot be used to attribute the fund's same-day -0.68% decline.</li>
+<li>Before the valuation timing is confirmed, Samsung's prior-day rise cannot be double-counted into the next period's NAV.</li>
+<li>Arbitrage opportunities, or a necessary next-day catch-up rise, cannot be directly derived from moves in an ADR and the local shares across different trading sessions.</li>
+<li>The "ChatGPT estimated values" in the screenshot cannot be treated as independently verified target prices.</li>
+<li>Without the latest full holdings and a unified return series, we cannot claim to have measured the current beta, maximum drawdown or forecast hit rate.</li>
+</ul>
+</div>
+
+<p class="small">
+This report separates "official disclosure", "user-provided", "research inference" and "scenario assumption". A source that is itself manager marketing material is not equivalent to an independently audited investment conclusion.
+</p>
+</section>
+
+<section id="method">
+<h2>03 | Investment method: what WCM is really betting on</h2>
+
+<h3>3.1 From company research to portfolio construction</h3>
+<p>
+The officially disclosed framework includes moats, corporate culture, structural growth, concentrated investment and valuation. In essence it is bottom-up company selection, not a simple replication of a global equity index.
+<a class="source" href="#s2">[S2]</a>
+</p>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Research dimension</th><th>This report's professional reading</th><th>The counter-question that must be tested</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Moat</td>
+<td>Find companies whose competitive advantage can strengthen and convert into long-term cash flow.</td>
+<td>Does the advantage come from genuine customer stickiness, or from short-term supply tightness?</td>
+</tr>
+<tr>
+<td>Corporate culture</td>
+<td>Treat management incentives, talent organisation and execution as clues to long-term growth.</td>
+<td>Can the culture judgment be falsified by operating results, or does it only form a pretty narrative?</td>
+</tr>
+<tr>
+<td>Structural growth</td>
+<td>Find demand that expands over the long term, rather than relying on a single quarter's cycle.</td>
+<td>Does order growth convert into revenue, profit and free cash flow?</td>
+</tr>
+<tr>
+<td>Concentrated investment</td>
+<td>Let a small number of high-conviction judgments matter enough to the portfolio.</td>
+<td>Do different companies in fact depend on the same capital-expenditure or financing cycle?</td>
+</tr>
+<tr>
+<td>Valuation</td>
+<td>Even a good company needs a reasonable entry price.</td>
+<td>Is earnings growth already fully priced into the share price?</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3>3.2 Position management: conviction-driven, not equal-weighted</h3>
+<p>
+An official December 2024 investment case study describes that new positions typically start at about 2%-5%, high-conviction holdings can be raised to about 10%, positions are trimmed when they rise into limits, and holdings are adjusted or sold when the competitive advantage weakens. This is a description of operations in a historical case, not proof of the current position of each stock.
+<a class="source" href="#s3">[S3]</a>
+</p>
+
+<p><strong>Research inference:</strong>
+This is a strategy that depends on both stock selection and position sizing. When it works, a few winners can lift returns materially; when it fails, a few large errors can magnify losses. Whether the manager adds after a price fall proves nothing by itself; the key is whether the investment thesis is still supported by operating data.
+</p>
+
+<h3>3.3 A cautious appraisal of the method</h3>
+<ul>
+<li><strong>Strength:</strong> the framework is distinctive and can form a portfolio that differs from the index.</li>
+<li><strong>Weakness:</strong> culture and moat judgments are subjective and need clear falsification indicators.</li>
+<li><strong>Not yet proven:</strong> whether the current drawdown is a temporary style headwind or the failure of some stock-selection theses.</li>
+</ul>
+</section>
+
+<section id="portfolio">
+<h2>04 | Portfolio risk: across industries is not the same as truly diversified</h2>
+
+<p>
+The official August 31, 2026 snapshot shows the mother fund at about 91.4% in equities, with capital goods at about 28.7%, and the top ten holdings summing to about 45.7%. These figures are a historical structure, not the actual exposure on November 25.
+<a class="source" href="#s1">[S1]</a>
+</p>
+
+<p><strong>Research inference:</strong>
+Traditional industry labels alone can understate common risk. Semiconductors, cloud and power equipment, for example, may sit in different categories yet depend on the same wave of capital-expenditure expansion at the same time. What should be studied is the source of demand and the correlation of cash flows, not the number of industries.
+</p>
+
+<h3>The ten stocks in the user's screenshot: what institutional due diligence should check</h3>
+<p class="small">
+The table below is not a confirmation of the latest holdings and not a stock-by-stock buy/sell recommendation; it is a follow-up checklist designed for the companies listed in the screenshot.
+</p>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Company</th><th>Operating evidence to check</th><th>Risk that could change the judgment</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Rolls-Royce</td>
+<td>Service revenue, margins, cash conversion and delivery against guidance.</td>
+<td>Growth not converting into free cash flow, or a valuation above deliverable earnings.</td>
+</tr>
+<tr>
+<td>Siemens Energy</td>
+<td>Order quality, project margins, execution risk and cash collection.</td>
+<td>Order volume grows while cash flow or project economics deteriorate.</td>
+</tr>
+<tr>
+<td>TSMC ADR</td>
+<td>Leading-edge process demand, capex returns, margins and overseas expansion costs.</td>
+<td>Demand concentration, falling investment returns or rising operating risk.</td>
+</tr>
+<tr>
+<td>SharkNinja</td>
+<td>Channel inventory, new-product growth, marketing efficiency and cash collection.</td>
+<td>Revenue growth accompanied by inventory or cost pressure.</td>
+</tr>
+<tr>
+<td>Welltower</td>
+<td>Same-store operating performance, cost of capital and asset returns.</td>
+<td>Operating improvement insufficient to cover financing costs and the entry valuation.</td>
+</tr>
+<tr>
+<td>Samsung Electronics</td>
+<td>Memory profit cycle, product mix, technology execution and capex discipline.</td>
+<td>A short-term price rise mistaken for a recovery of long-term competitive advantage.</td>
+</tr>
+<tr>
+<td>Teva</td>
+<td>Product portfolio, cash flow, debt and material contingent liabilities.</td>
+<td>An earnings recovery that fails to convert into debt improvement.</td>
+</tr>
+<tr>
+<td>Microsoft</td>
+<td>Cloud growth, AI revenue realisation and cash flow after capex.</td>
+<td>Revenue growth insufficient to compensate for investment and valuation.</td>
+</tr>
+<tr>
+<td>Meta Platforms</td>
+<td>Advertising efficiency, cost discipline and capex returns.</td>
+<td>A persistently widening gap between growth and cash flow.</td>
+</tr>
+<tr>
+<td>Charles River Laboratories</td>
+<td>Orders, the client funding environment, utilisation and cost adjustments.</td>
+<td>Demand recovery delayed, or margin improvement dependent on one-off factors.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="warning">
+<strong>Key distinction:</strong>
+Low leverage can ease financing pressure, but it does not automatically mean a stock is insensitive to interest rates. Operating risk, valuation risk and market style risk must be assessed separately.
+</div>
+
+<h3>Currency risk should be budgeted separately</h3>
+<p>
+In principle the fund does not hedge currency exposure back into yen. If foreign currencies depreciate against the yen, the yen value of foreign-currency assets is reduced.
+<a class="source" href="#s1">[S1]</a>
+</p>
+<p>
+This report does not use USD/JPY as a proxy for the entire currency exposure: a formal forecast should model the actual denomination currencies of the assets — US dollar, euro, pound, Korean won and others — separately, and confirm the security form used and the valuation exchange rates.
+</p>
+</section>
+
+<section id="performance">
+<h2>05 | Performance check: the drawdown cannot all be explained by distributions</h2>
+
+<p>
+The official third-quarter report discloses that from end-June to end-September 2026, the distribution type's published NAV fell from JPY 13,133 to JPY 11,360; on a pre-tax distribution-reinvested basis the return was about -7.4%, while the reference index was about -0.6% over the same period.
+<a class="source" href="#s4">[S4]</a>
+</p>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Official approximate factor</th><th>Effect on published NAV</th><th>Research implication</th></tr>
+</thead>
+<tbody>
+<tr><td>Equities</td><td>-JPY 661</td><td>The portfolio's investment performance itself was a drag.</td></tr>
+<tr><td>Currency</td><td>-JPY 258</td><td>Yen-denominated risk cannot be ignored.</td></tr>
+<tr><td>Distributions</td><td>-JPY 800</td><td>Cash payments lower the NAV; they are not the same as investment losses.</td></tr>
+<tr><td>Other</td><td>-JPY 53</td><td>Fees and similar effects; the attribution is approximate.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="small">
+Components and totals may differ due to rounding; the above are the manager's approximations. Source: official October 2026 drawdown report. <a href="#s4">[S4]</a>
+</p>
+
+<div class="callout">
+<strong>Investment-committee reading:</strong>
+"Not all of the NAV decline is a loss" is true. "The decline is mainly just distributions, so there is no need to worry about investment performance" is not true. This period contained real investment losses and clear underperformance versus the reference index.
+</div>
+
+<h3>What further tests are needed to prove manager skill?</h3>
+<ul>
+<li>Compare using the same dates, the same currency and the same distribution treatment.</li>
+<li>Separate global market returns, growth-style returns and stock-selection contribution.</li>
+<li>Test across multiple market cycles, not only the best single year.</li>
+<li>Assess downside capture, drawdown recovery time and tail risk.</li>
+<li>Use the fund's actual after-fee performance, not pre-fee strategy returns of other composites mixed in.</li>
+</ul>
+
+<p>
+The complete, unified series needed for these tests is not available this time, so alpha, beta, information ratio, Sharpe ratio and the current maximum drawdown are neither calculated nor fabricated.
+</p>
+</section>
+
+<section id="valuation">
+<h2>06 | Valuation and fees: a good method does not mean any price is worth paying</h2>
+
+<h3>6.1 It cannot simply be labelled an "expensive technology fund"</h3>
+<p>
+Official end-August 2026 portfolio characteristics disclose a forward P/E of about 14.3x for the mother fund versus about 16.1x for the reference index; trailing P/E was about 22.1x and 20.9x respectively. These are the manager's statistics for that point in time and cannot serve as the portfolio's valuation on November 25.
+<a class="source" href="#s4">[S4]</a>
+</p>
+
+<p><strong>Research inference:</strong>
+The historical forward P/E not being high is worth further checking, but it is not proof of cheapness: future earnings forecasts can be revised down, industry structures differ, and earnings cyclicality differs. The calculation method, treatment of loss-makers, forecast horizon and cash share must be verified. This report therefore accepts neither "growth stocks are necessarily expensive" nor "a low forward P/E necessarily means undervalued".
+</p>
+
+<h3>6.2 Fees are a clear investment hurdle</h3>
+<p>
+The official prospectus lists an annual trust fee of 1.958% (tax included); the purchase fee is set by the distributor, capped at 3.3%, and there are other costs. The published NAV already has the fund's related fees deducted.
+<a class="source" href="#s1">[S1]</a>
+</p>
+
+<p>
+As a pure comparison assumption, if another product's annual fee were 0.20%, then on the trust-fee difference alone WCM would need roughly 1.758 percentage points of extra return per year to offset that fee gap; this is not a complete after-tax comparison and does not name a specific alternative product.
+</p>
+
+<div class="warning">
+<strong>Preventing double deduction:</strong>
+When using the fund's realised NAV returns, the trust fee must not be deducted a second time; fees need to be added explicitly only when forecasting bottom-up from equities and currencies. The scenario model below is of the latter kind.
+</div>
+</section>
+
+<section id="forecast">
+<h2>07 | Price outlook: conditional forecasts, not falsely precise target prices</h2>
+
+<h3>7.1 Updated directional view</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Observation window</th><th>This report's judgment</th><th>Conditions needed to upgrade the judgment</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>To around December 25, 2026</td>
+<td>Neutral to cautious; no trend rebound is confirmed.</td>
+<td>Improvement broadens across holdings, earnings expectations stabilise, and currency stops being a persistent drag.</td>
+</tr>
+<tr>
+<td>To around February 25, 2027</td>
+<td>Neutral; more weight on earnings and operating delivery.</td>
+<td>Not just a price rebound, but improvement in orders, cash flow and guidance.</td>
+</tr>
+<tr>
+<td>To around May 25, 2027</td>
+<td>Room for recovery exists, but a clear downside scenario is retained.</td>
+<td>Competitive-advantage theses deliver, portfolio total return recovers, and risk exposure is reasonable.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p class="small">
+The dates are research observation windows; they do not imply a NAV will be published on that day, nor promise a particular price by then. The directional view is a research inference based on limited evidence.
+</p>
+
+<h3>7.2 Six-month price model</h3>
+<p>
+To avoid prices from thin air, a reproducible simplified model is used:
+</p>
+
+<div class="formula">
+V* = V0 x {1 + a x [(1 + q) x (1 + f) - 1]} x (1 - c)
+</div>
+
+<ul>
+<li><strong>V0:</strong> JPY 9,983, using the user's November 24 screenshot input.</li>
+<li><strong>a:</strong> assumed equity ratio of 90%; not a verified current weight.</li>
+<li><strong>q:</strong> assumed six-month local-currency total return of the equity basket, including dividends.</li>
+<li><strong>f:</strong> assumed weighted foreign-currency move against the yen for the basket; a positive value helps the yen NAV.</li>
+<li><strong>c:</strong> six-month trust-fee approximation of 0.979%, i.e. half of 1.958%.</li>
+<li><strong>V*:</strong> the equivalent NAV if no future fund distributions are paid; not a promised published NAV.</li>
+</ul>
+
+<p class="small">
+The model simplifies the interaction between currencies and holdings, the fee-deduction path and cash returns; it excludes trading costs, other fees and turnover. q, f and a are all scenario inputs, not historically calibrated.
+</p>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Six-month scenario</th>
+<th>Equity return q</th>
+<th>FX effect f</th>
+<th>Equivalent NAV (approx.)</th>
+<th>Economic conditions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="bad">Stress</td>
+<td>-20%</td>
+<td>-5%</td>
+<td class="bad">JPY 7,750</td>
+<td>Earnings or valuations under pressure, with foreign currencies depreciating against the yen.</td>
+</tr>
+<tr>
+<td>Mild recovery</td>
+<td>+8%</td>
+<td>0%</td>
+<td>JPY 10,600</td>
+<td>The equity basket resumes growth, with no major additional drag from valuation or currency.</td>
+</tr>
+<tr>
+<td class="good">Strong recovery</td>
+<td>+20%</td>
+<td>+3%</td>
+<td class="good">JPY 11,980</td>
+<td>Core themes improve across the board while currency is favourable.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="warning">
+<strong>How to read these numbers:</strong>
+They are "if the assumptions hold, what price results" — not "how likely the market is to reach that price". The three scenarios do not cover all possible outcomes and do not constitute a confidence interval; actual losses could exceed the stress scenario. This report assigns no unestimated scenario probabilities and computes no falsely precise weighted target price.
+</div>
+
+<h3>7.3 What would it take to return to the distribution bands?</h3>
+<p>
+Computed from the 9,983 input alone, and ignoring future distributions, reaching 11,000 requires about 10.2% NAV growth, and reaching 12,000 about 20.2%. These are arithmetic hurdles only, not mean-reversion targets or technical resistance levels.
+</p>
+
+<h3>7.4 Why no reliable single-day price is offered</h3>
+<p>
+A single-day valuation needs a unified market date, the actual held securities, the latest weights, Asian closes on the day, and the manager's valuation exchange rates. A screenshot cannot satisfy these conditions. The partial contribution of ten stocks cannot substitute for the whole portfolio, and this report no longer packages 9,920 or 9,950 as a complete November 25 NAV forecast.
+</p>
+
+<div class="calculator">
+<h3>Adjustable six-month scenario calculator</h3>
+<p class="small">
+For sensitivity analysis only. It does not call live prices and does not automatically predict distributions.
+</p>
+<div class="grid">
+  <div><label for="v0">Starting NAV (JPY per 10,000 units)</label>
+    <input id="v0" type="number" value="9983" min="1"></div>
+  <div><label for="equity">Equity ratio (%)</label>
+    <input id="equity" type="number" value="90" min="0" max="100"></div>
+  <div><label for="stock">Equity basket local-currency total return (%)</label>
+    <input id="stock" type="number" value="8" step="0.1"></div>
+  <div><label for="fx">Basket weighted FX move vs yen (%)</label>
+    <input id="fx" type="number" value="0" step="0.1"></div>
+  <div><label for="fee">Six-month fee approximation (%)</label>
+    <input id="fee" type="number" value="0.979" min="0" max="100" step="0.001"></div>
+</div>
+<p><button type="button" onclick="calculate()">Calculate scenario</button></p>
+<div id="calcResult" role="status" aria-live="polite"></div>
+</div>
+</section>
+
+<section id="distribution">
+<h2>08 | Distribution mechanism and the November 25, 2026 judgment</h2>
+
+<p>
+Under the official rules, the NAV on the business day before the settlement date is in principle the reference; below JPY 11,000 the amount is decided at discretion, and the other bands are as follows. The manager reserves the possibility of adjusting or skipping a distribution when distributable amounts are insufficient or sharp moves occur near the settlement date.
+<a class="source" href="#s1">[S1]</a>
+</p>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Prior business day NAV</th><th>Target distribution per 10,000 units (pre-tax)</th></tr>
+</thead>
+<tbody>
+<tr><td>Below JPY 11,000</td><td>Decided according to the NAV level and other factors</td></tr>
+<tr><td>JPY 11,000 to below 12,000</td><td>JPY 200</td></tr>
+<tr><td>JPY 12,000 to below 13,000</td><td>JPY 300</td></tr>
+<tr><td>JPY 13,000 to below 14,000</td><td>JPY 400</td></tr>
+<tr><td>JPY 14,000 and above</td><td>JPY 500</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout">
+<strong>Research judgment for this period:</strong>
+If the November 24 input of JPY 9,983 is accurate, this period falls in the discretionary zone below 11,000. "No distribution" is the leaning scenario, with JPY 100 as the alternative; but there is not enough evidence to assign a precise probability, and the official announcement for the period is the final word.
+</div>
+
+<p>
+The leaning above refers to the official site's record of multiple skipped distributions in low-NAV phases and the history of a JPY 100 distribution on October 26, 2026; it is not a formal rule that "below 10,000 always means no distribution".
+<a class="source" href="#s5">[S5]</a>
+</p>
+
+<h3>Price after a distribution, and the investor's total wealth</h3>
+<div class="formula">
+Vt = V(t-1) x (1 + Rt) - Dt
+</div>
+<p>
+Rt must be the pre-distribution return including the corresponding fee effects; Dt is the pre-tax distribution per 10,000 units. If the pre-distribution NAV is 9,920 and 100 is distributed, the published NAV becomes about 9,820. That 100 comes from the fund's net assets; it is not newly created wealth.
+<a class="source" href="#s1">[S1]</a>
+</p>
+
+<p>
+Multi-period forecasts must deduct distributions period by period and handle the subsequent return path; subtracting cumulative distributions from the final NAV is not an exact substitute. An individual's actual return also depends on taxes, whether the cash is reinvested, and trading timing; this report does not estimate personal after-tax returns.
+</p>
+</section>
+
+<section id="monitor">
+<h2>09 | Investment-committee decision conditions and risk budgeting</h2>
+
+<h3>To upgrade to a more positive view, the following must appear together</h3>
+<ol>
+<li>Obtain the latest official holdings and confirm changes in core positions and risk concentration.</li>
+<li>Core investment theses are supported by operating and cash-flow data.</li>
+<li>After-fee total return improves, rather than only a brief post-distribution NAV bounce.</li>
+<li>Relative performance versus the reference market stops deteriorating.</li>
+<li>The entry valuation can absorb errors in earnings forecasts.</li>
+</ol>
+
+<h3>Signs that call for a downgrade or re-review</h3>
+<ul>
+<li>Competitive advantage, cash flow or management guidance at core holdings keeps deteriorating.</li>
+<li>Several holdings are hit simultaneously by a reversal in a common demand cycle.</li>
+<li>Turnover increases without an explainable logic for the risk and return improvement.</li>
+<li>Equity declines coincide with yen appreciation.</li>
+<li>The investor actually needs stable cash flow yet depends on unguaranteed monthly distributions.</li>
+</ul>
+
+<h3>Size positions backwards from tolerable loss, not from target return</h3>
+<div class="formula">
+Illustrative maximum position = tolerable portfolio loss budget / assumed fund stress loss
+</div>
+<p>
+Pure illustration: if the total-asset loss budget allocated to this investment is 3% and the assumed stress loss is 40%, the arithmetic position is 7.5%. This is not personal allocation advice; correlated holdings falling together, liquidity, and more severe tail losses may require a lower position.
+</p>
+
+<h3>Distribution type vs asset-growth type should be chosen by purpose</h3>
+<p>
+Officially, the asset-growth type in principle restrains distributions in pursuit of compounding; the distribution type settles monthly and decides distributions by rule. Their price levels cannot be compared directly as "expensive or cheap".
+<a class="source" href="#s1">[S1]</a>
+</p>
+<p>
+The research approach this report recommends is to compare total return, fees and actual cash-flow needs on the same basis, rather than choosing because one NAV is lower or the other's historical distributions were higher.
+</p>
+</section>
+
+<section>
+<h2>10 | Final assessment: worth researching, but the buy case is not yet made</h2>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Dimension</th><th>This report's qualitative conclusion</th><th>Limitation of the conclusion</th></tr>
+</thead>
+<tbody>
+<tr><td>Investment framework</td><td>Distinctive; worth continued tracking.</td><td>A distinctive method does not imply effectiveness.</td></tr>
+<tr><td>Risk structure</td><td>Concentration, style and currency must be managed together.</td><td>Current exposure is not fully verified.</td></tr>
+<tr><td>Current valuation</td><td>Cannot be confirmed cheap or expensive.</td><td>Lacks the latest portfolio valuation and forecast checks.</td></tr>
+<tr><td>Manager's excess-return ability</td><td>Cannot be certified on the material at hand alone.</td><td>Lacks a unified return series and style attribution.</td></tr>
+<tr><td>Cash-flow character</td><td>Not suitable to be understood as guaranteed income.</td><td>Future distribution amounts are not guaranteed.</td></tr>
+<tr><td>Short-term price</td><td>Directional view leans cautious.</td><td>No falsely precise daily target is offered.</td></tr>
+<tr><td>Six-month outlook</td><td>Neutral / observe; both recovery and downside retained.</td><td>Scenario figures are not probability-calibrated.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout">
+<strong>Final view:</strong>
+WCM may create long-term value through high-conviction company selection, but within this report's evidence scope there is not enough to support "it has already bottomed" or "build a large position immediately". The priority is to fill in the latest holdings, operating verification and risk attribution — not to keep raising the surface precision of price forecasts.
+</div>
+</section>
+
+<section id="sources">
+<h2>11 | Sources, audit status and further research list</h2>
+
+<ol>
+<li id="s1">
+<strong>[S1] Asahi Life Asset Management, official prospectus (November 25, 2026 edition)</strong><br>
+Use: investment process, historical holdings, fees, trading and distribution rules.<br>
+<a href="https://www.alamco.co.jp/fund/WCM_ag/moku_k_WCM_000000.pdf" target="_blank" rel="noopener noreferrer">View the official PDF</a><br>
+<span class="small">Note: a document's issue date is not the date of the holdings data inside it.</span>
+</li>
+
+<li id="s2">
+<strong>[S2] Official full-holdings introduction (as of December 30, 2025)</strong><br>
+Use: verifying the investment philosophy; not used to certify the latest November 2026 holdings.<br>
+<a href="https://www.alamco.co.jp/fund/news/pdf/wcm_20251230.pdf" target="_blank" rel="noopener noreferrer">View the official PDF</a>
+</li>
+
+<li id="s3">
+<strong>[S3] Official investment case: AppLovin (December 2024)</strong><br>
+Use: verifying historical position building, position adjustment and the concentrated-investment approach.<br>
+<a href="https://www.alamco.co.jp/fund/news/pdf/wcm_20241210.pdf" target="_blank" rel="noopener noreferrer">View the official PDF</a>
+</li>
+
+<li id="s4">
+<strong>[S4] Official drawdown report (published October 2026)</strong><br>
+Use: third-quarter 2026 attribution and end-August portfolio characteristics.<br>
+<a href="https://www.alamco.co.jp/newsrelease/2026/rmho650000008e34-att/wcm_20261019.pdf" target="_blank" rel="noopener noreferrer">View the official PDF</a><br>
+<span class="small">
+The manager's attribution is approximate; the forward P/E is a historical snapshot, not a current valuation.
+</span>
+</li>
+
+<li id="s5">
+<strong>[S5] Official page of the distribution-type fund</strong><br>
+Use: the November 20, 2026 NAV snapshot returned in this search, historical distributions and return conventions.<br>
+<a href="https://www.alamco.co.jp/fund/WCM_es/index.html?tab=reportBlock" target="_blank" rel="noopener noreferrer">View the official page</a><br>
+<span class="small">Dynamic web pages may be updated; rely on the dates noted with the data.</span>
+</li>
+
+<li>
+<strong>[U1] User-provided WCM daily-report screenshot</strong><br>
+Use: the JPY 9,983 calculation starting point, the ten-stock list, and review of the web page's valuation conventions.<br>
+<span class="small">
+The prices, financial figures, events and valuations in the screenshot have not all been independently verified.
+</span>
+</li>
+</ol>
+
+<h3>To upgrade this into a backtestable formal quantitative forecast, the following are needed</h3>
+<ul>
+<li>The fund's complete historical NAV, distributions and a unified total-return series.</li>
+<li>Recent official holdings and weights, with the actual security form stated.</li>
+<li>Valuation exchange rates for the corresponding dates and each market's price time series.</li>
+<li>Fees, cash ratio, turnover, and subscription/redemption effects.</li>
+<li>A reference market and style factors on a consistent basis.</li>
+<li>Out-of-sample backtests, interval coverage and tail-error checks.</li>
+</ul>
+
+<p class="small">
+This time the investment mechanism, fees, formal distribution rules and historical drawdown attribution were verified; the November 25 distribution announcement for this period, the latest full holdings and unified model data have not yet been obtained. These gaps limit the current price forecast and any certification of manager skill.
+</p>
+</section>
+
+<footer>
+<p>
+This report is AI-assisted research material. It is not an official view of WCM, Asahi Life, any regulator or any rating agency, and it does not constitute personal investment, legal or tax advice. All scenarios depend on assumptions, and past performance does not guarantee future results. The author does not claim the identity of a real fund manager or institutional endorsement.
+</p>
+<p>
+Version: 2026-11-25 | Prices: JPY per 10,000 units |
+Price-calculation starting point: the user-provided November 24, 2026 NAV of JPY 9,983.
+</p>
+<button class="print-button" type="button" onclick="window.print()">
+Print / save as PDF
+</button>
+</footer>
+
+</div>
+</main>
+
+<script>
+function calculate(){
+  const read = id => Number(document.getElementById(id).value);
+  const ids = ["v0","equity","stock","fx","fee"];
+  const fields = ids.map(id => document.getElementById(id));
+  const result = document.getElementById("calcResult");
+
+  if(fields.some(field => field.value.trim() === "")){
+    result.textContent = "Please fill in all inputs.";
+    return;
+  }
+
+  const v0 = read("v0");
+  const a = read("equity") / 100;
+  const q = read("stock") / 100;
+  const f = read("fx") / 100;
+  const c = read("fee") / 100;
+
+  if(
+    ![v0,a,q,f,c].every(Number.isFinite) ||
+    v0 <= 0 || a < 0 || a > 1 ||
+    q < -1 || f <= -1 || c < 0 || c >= 1
+  ){
+    result.textContent =
+      "Invalid input: NAV must be greater than 0, equity ratio 0-100%, "
+      + "equity return not below -100%, FX move greater than -100%, "
+      + "and fees 0 to below 100%.";
+    return;
+  }
+
+  const value = v0 * (1 + a * ((1 + q) * (1 + f) - 1)) * (1 - c);
+  const ret = (value / v0 - 1) * 100;
+
+  result.textContent =
+    "Six-month scenario equivalent NAV is about JPY "
+    + Math.round(value).toLocaleString("en-US")
+    + "; the corresponding change is about "
+    + ret.toFixed(2)
+    + "%. No future fund distributions are paid and not all other fees are included; this is not a probability forecast.";
+}
+calculate();
+</script>
+</body>
+</html>
