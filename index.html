@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja"><head><meta charset="utf-8">
-<meta name="viewport" content="width=1110">
+<meta name="viewport" content="width=1080">
 <!DOCTYPE html>
 <html lang="ja"><head><meta charset="utf-8">
 <style>
@@ -104,30 +104,33 @@ footer b{color:#5f7488;}
 <div class="next">次の一手：PCEへの反応と、アジア株が米11/24の反落をどう織り込むかを確認します。</div></div>
 
 <footer>出典：<b>楽天証券</b>（基準価額 11/24・直接確認）／ <b>Finnhubほか</b>（10銘柄終値 11/24、欧州・韓国株は各市場集計で確認）／ <b>Reuters・WSJほか</b>（米指数・Dell決算）／各社公式決算（売上・純利益）／ <b>CBOE公式データに基づく複数源</b>（VIX 11/24終値 26.36、CBOE遅延クォートは取得不可）｜ 取得：2026-11-25 07:00 JST（前日07:00→当日07:00 结算）<br>投資勧誘ではありません。</footer>
+
 </div>
 <aside class="side"><a class="iconlink" href="reports.html" title="Reports"><img src="icons/icon-reports.webp" alt="Reports"></a><a class="iconlink" href="assets.html" title="Digital Assets"><img src="icons/icon-assets.webp" alt="Digital Assets"></a><a class="iconlink" href="tasks.html" title="Daily Tasks"><img src="icons/icon-tasks.webp" alt="Daily Tasks"></a></aside></div><style>
-/* web-only overrides: report (1080px) + right sidebar in a horizontally scrollable row.
-   The document itself stays exactly 1080px wide (the viewport), so on phones the report
-   fills the first screen and the sidebar appears only after swiping sideways; on wide
-   desktop screens the whole row is visible, centered, with a sticky sidebar.
-   Roomier stock cards so every line (incl. valuation) fits inside the card. */
+/* web-only overrides: the report column is 1000px wide inside the 1080px phone
+   viewport (user 2026-11-25: slightly narrower so the whole report is visible on
+   phones without swiping; the ~80px slack absorbs browser fit quirks). The icon
+   sidebar floats: it is sticky at every width, so after scrolling down the user
+   can still swipe sideways and tap the buttons. The document (not .hwrap) is the
+   horizontal scroller. The WCM report is followed, inside the same .report
+   column, by the Invesco (世界のベスト) daily report when one exists for the
+   same date (see build_wcm's invesco merge). */
 html{background:linear-gradient(160deg,#fdf6ec 0%,#fdeef4 48%,#eef4fd 100%);}
 /* width:auto + no side padding: the source body's width:1080px + 26px side padding
    pushed .report to x=26..1106, past the 1080px phone viewport, cutting the right
    edge off on phones. With this override .report spans exactly 0..1080. */
 body{margin:0;background:transparent;width:auto;padding:4px 0 0;}
-.hwrap{display:flex;flex-direction:row;align-items:flex-start;width:100%;max-width:1334px;margin:0 auto;overflow-x:auto;overflow-y:hidden;}
-.report{width:1080px;flex:0 0 auto;}
-aside.side{width:236px;flex:0 0 auto;margin-left:18px;padding-top:26px;display:flex;flex-direction:column;align-items:center;gap:16px;}
+.hwrap{display:flex;flex-direction:row;align-items:flex-start;width:1254px;margin:0 auto;overflow:visible;}
+.report{width:1000px;flex:0 0 auto;}
+aside.side{width:236px;flex:0 0 auto;margin-left:18px;padding-top:26px;display:flex;flex-direction:column;align-items:center;gap:16px;position:sticky;top:26px;}
 aside.side a.iconlink{display:block;line-height:0;}
 aside.side a.iconlink img{width:104px;height:104px;border-radius:22px;box-shadow:0 4px 14px rgba(90,110,140,.18);}
-@media (min-width:1400px){.hwrap{overflow:visible;}aside.side{position:sticky;top:26px;}}
 .grid{gap:2px;}
-/* web-only card width: inside .report the content width is the full 1080px (the source
-   body's 26px padding sits outside .report), so cards are 539px (539*2 + gap 2 = 1080)
-   to align the grid's right edge with the other blocks. The PNG/source HTML keeps
-   513px cards for its 1028px content width. Do not "unify" the two numbers. */
-.card{width:539px;height:auto;min-height:164px;padding:10px 16px 10px;}
+/* web-only card width: .report is 1000px wide on the web, so cards are 499px
+   (499*2 + gap 2 = 1000) to align the grid's right edge with the other blocks.
+   The PNG/source HTML keeps 513px cards for its 1028px content width.
+   Do not "unify" the two numbers. */
+.card{width:499px;height:auto;min-height:164px;padding:10px 16px 10px;}
 .obs{margin-top:4px;}
 .val{margin-top:4px;}
 </style>
