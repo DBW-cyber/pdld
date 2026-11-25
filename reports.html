@@ -17,21 +17,95 @@ a.back{color:#265a86;text-decoration:none;font-size:14px;}
 .card .desc{font-size:14.5px;margin-top:8px;}
 .tag{display:inline-block;background:#e9eff6;color:#265a86;border-radius:4px;padding:1px 9px;font-size:12px;margin-right:8px;}
 .note{font-size:13px;color:#66758a;margin-top:30px;}
+.langbar{display:flex;gap:8px;align-items:center;margin:0 0 18px;flex-wrap:wrap;}
+.langbar .lb-label{font-size:13px;color:#66758a;margin-right:2px;}
+.langbar button{font-size:15px;padding:7px 18px;border-radius:999px;border:1.5px solid #265a86;background:#fff;color:#265a86;cursor:pointer;font-weight:700;}
+.langbar button.on{background:#265a86;color:#fff;}
 </style>
 </head>
 <body>
 <main>
-<a class="back" href="index.html">← WCM日報トップへ戻る</a>
-<h1>レポートリンク集</h1>
-<p class="sub">外部レポートや調査資料を、タイトル・日付・作成者つきで保管するページです。新しいレポートはここへ追加していきます。</p>
+<div class="langbar">
+  <span class="lb-label" id="lbLabel">言語 / Language</span>
+  <button type="button" data-lang="zh" onclick="setLang('zh')">中文</button>
+  <button type="button" data-lang="ja" onclick="setLang('ja')">日本語</button>
+  <button type="button" data-lang="en" onclick="setLang('en')">English</button>
+</div>
 
-<a class="card" href="reports/chatgpt-wcm-report-2026-11-25.html">
-  <div class="ttl">WCM世界成長株ファンド｜投資デューデリジェンス・価格シナリオリポート</div>
-  <div class="meta"><span class="tag">レポート</span>日付：2026年11月25日　｜　作成者：ChatGPT（AI）　｜　日本語訳版（中国語原稿より翻訳）</div>
-  <div class="desc">WCM 世界成長株厳選ファンド（予想分配金提示型）の投資手法、ポートフォリオ・リスク、パフォーマンス検証、費用、6か月価格シナリオと分配金の判断条件を、エビデンスの確度を区別しながら整理した独立研究レポート。調整可能なシナリオ計算機つき。</div>
+<a class="back" href="index.html" id="backLink">← WCM日報トップへ戻る</a>
+<h1 id="pageTitle">レポートリンク集</h1>
+<p class="sub" id="pageSub">外部レポートや調査資料を、タイトル・日付・作成者つきで保管するページです。新しいレポートはここへ追加していきます。</p>
+
+<a class="card" id="card1" href="reports/chatgpt-wcm-report-2026-11-25.html">
+  <div class="ttl" id="c1ttl">WCM世界成長株ファンド｜投資デューデリジェンス・価格シナリオリポート</div>
+  <div class="meta" id="c1meta"><span class="tag">レポート</span>日付：2026年11月25日　｜　作成者：ChatGPT（AI）　｜　日本語訳版（中国語原稿より翻訳）</div>
+  <div class="desc" id="c1desc">WCM 世界成長株厳選ファンド（予想分配金提示型）の投資手法、ポートフォリオ・リスク、パフォーマンス検証、費用、6か月価格シナリオと分配金の判断条件を、エビデンスの確度を区別しながら整理した独立研究レポート。調整可能なシナリオ計算機つき。</div>
 </a>
 
-<p class="note">※各レポートは作成者（AI等）による独立研究であり、運用会社の公式見解ではありません。投資判断は最新の公式情報をあわせてご確認ください。</p>
+<p class="note" id="pageNote">※各レポートは作成者（AI等）による独立研究であり、運用会社の公式見解ではありません。投資判断は最新の公式情報をあわせてご確認ください。</p>
 </main>
+
+<script>
+var I18N = {
+  ja: {
+    htmlLang: "ja",
+    docTitle: "レポートリンク集｜WCM日報",
+    back: "← WCM日報トップへ戻る",
+    title: "レポートリンク集",
+    sub: "外部レポートや調査資料を、タイトル・日付・作成者つきで保管するページです。新しいレポートはここへ追加していきます。",
+    c1href: "reports/chatgpt-wcm-report-2026-11-25.html",
+    c1ttl: "WCM世界成長株ファンド｜投資デューデリジェンス・価格シナリオリポート",
+    c1meta: '<span class="tag">レポート</span>日付：2026年11月25日　｜　作成者：ChatGPT（AI）　｜　日本語訳版（中国語原稿より翻訳）',
+    c1desc: "WCM 世界成長株厳選ファンド（予想分配金提示型）の投資手法、ポートフォリオ・リスク、パフォーマンス検証、費用、6か月価格シナリオと分配金の判断条件を、エビデンスの確度を区別しながら整理した独立研究レポート。調整可能なシナリオ計算機つき。",
+    note: "※各レポートは作成者（AI等）による独立研究であり、運用会社の公式見解ではありません。投資判断は最新の公式情報をあわせてご確認ください。"
+  },
+  zh: {
+    htmlLang: "zh-CN",
+    docTitle: "报告链接集｜WCM日报",
+    back: "← 返回WCM日报首页",
+    title: "报告链接集",
+    sub: "这里集中存放外部报告与研究资料，每份都标注标题、日期与撰写人。新的报告会陆续添加到这里。",
+    c1href: "reports/chatgpt-wcm-report-2026-11-25.zh.html",
+    c1ttl: "WCM全球成长基金｜投资尽调与价格情景报告",
+    c1meta: '<span class="tag">报告</span>日期：2026年11月25日　｜　撰写人：ChatGPT（AI）　｜　中文原稿',
+    c1desc: "围绕 WCM 世界成长精选基金（预期分配型）的投资方法、组合风险、业绩检验、费用、六个月价格情景与分配判断条件展开的独立研究报告，明确区分证据强度，并附可调参数的情景计算器。",
+    note: "※每份报告均为撰写人（AI等）的独立研究，不代表基金管理人的官方观点。投资判断请结合最新官方信息确认。"
+  },
+  en: {
+    htmlLang: "en",
+    docTitle: "Report Index | WCM Daily Report",
+    back: "&larr; Back to the WCM daily report home",
+    title: "Report Index",
+    sub: "External reports and research materials, each filed with its title, date and author. New reports will be added here.",
+    c1href: "reports/chatgpt-wcm-report-2026-11-25.en.html",
+    c1ttl: "WCM Global Growth Fund | Investment Due Diligence & Price Scenario Report",
+    c1meta: '<span class="tag">Report</span>Date: November 25, 2026 &nbsp;|&nbsp; Author: ChatGPT (AI) &nbsp;|&nbsp; English edition (translated from the Chinese original)',
+    c1desc: "An independent research report on the WCM Global Growth Equity Fund (Projected-Distribution Type): investment method, portfolio risk, performance verification, fees, six-month price scenarios and the conditions behind distribution judgments — with the strength of evidence kept clearly separate, and an adjustable scenario calculator.",
+    note: "*Each report is independent research by its author (AI or other) and is not the fund manager's official view. Please confirm investment decisions against the latest official information."
+  }
+};
+function setLang(l){
+  var t = I18N[l]; if(!t) return;
+  document.documentElement.lang = t.htmlLang;
+  document.title = t.docTitle;
+  document.getElementById("backLink").innerHTML = t.back;
+  document.getElementById("pageTitle").textContent = t.title;
+  document.getElementById("pageSub").textContent = t.sub;
+  var card = document.getElementById("card1");
+  card.href = t.c1href;
+  document.getElementById("c1ttl").textContent = t.c1ttl;
+  document.getElementById("c1meta").innerHTML = t.c1meta;
+  document.getElementById("c1desc").textContent = t.c1desc;
+  document.getElementById("pageNote").textContent = t.note;
+  var btns = document.querySelectorAll(".langbar button");
+  for(var i=0;i<btns.length;i++){ btns[i].classList.toggle("on", btns[i].getAttribute("data-lang")===l); }
+  try{ localStorage.setItem("pdld_reports_lang", l); }catch(e){}
+}
+(function(){
+  var saved = null;
+  try{ saved = localStorage.getItem("pdld_reports_lang"); }catch(e){}
+  setLang(saved && I18N[saved] ? saved : "ja");
+})();
+</script>
 </body>
 </html>
