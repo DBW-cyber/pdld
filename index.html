@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja"><head><meta charset="utf-8">
-<meta name="viewport" content="width=1080">
+<meta name="viewport" content="width=1000">
 <style>
 @page { size: 1080px 1920px; margin: 0; }
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -65,7 +65,7 @@ footer b{color:#5f7488;}
 .tag{font-size:14px; font-weight:900; color:#fff; border-radius:6px; padding:1px 7px; margin-right:6px; vertical-align:2px;}
 .tag.d{background:#2f7fb8;} .tag.i{background:#82a86b;} .tag.m{background:#b08968;}
 </style></head><body>
-<div class="hwrap"><div class="report">
+<div class="scroller"><div class="hwrap"><div class="report">
 
 <header><div><h1>◆ WCM <span class="accent">日報</span></h1><div class="sub">ＷＣＭ 世界成長株厳選ファンド（予想分配金提示型）<br>2026年11月26日（木）</div></div>
 <div class="note">市場日：欧米株＝11/25 終値<br>韓国株＝11/25 終値<br><span class="up">▲ 緑＝上昇</span>　<span class="dn">▼ 赤＝下落</span></div></header>
@@ -132,23 +132,32 @@ footer b{color:#5f7488;}
 <footer>出典：<b>楽天証券</b>（基準価額 11/25・ファンドコード JP90C0002EX1・直接確認）／ <b>Finnhub・StockAnalysis・MarketWatchほか</b>（銘柄終値、欧米・香港とも 11/25）／ <b>みんかぶ投資信託</b>（組入上位 2026-10-30基準の速報抽出、第3位・第8位は銘柄名が空欄のため未特定）／各社公式決算・専档整理（売上・純利益）｜ 取得：2026-11-26 07:31 JST（07:00结算時点の最新公表分）<br>投資勧誘ではありません。</footer>
 </div>
 </div>
-<aside class="side"><div class="sidestick"><a class="iconlink" href="reports.html" title="Reports"><img src="icons/icon-reports.webp" alt="Reports"></a><a class="iconlink" href="assets.html" title="Digital Assets"><img src="icons/icon-assets.webp" alt="Digital Assets"></a><a class="iconlink" href="tasks.html" title="Daily Tasks"><img src="icons/icon-tasks.webp" alt="Daily Tasks"></a></div></aside></div><style>
-/* web-only overrides: the report column is 1000px wide inside the 1080px phone
-   viewport (user 2026-11-25: slightly narrower so the whole report is visible on
-   phones without swiping; the ~80px slack absorbs browser fit quirks). The icon
-   sidebar floats: it is sticky at every width, so after scrolling down the user
-   can still swipe sideways and tap the buttons. The document (not .hwrap) is the
-   horizontal scroller. The WCM report is followed, inside the same .report
-   column, by the Invesco (世界のベスト) daily report when one exists for the
-   same date (see build_wcm's invesco merge). */
-html{background:linear-gradient(160deg,#fdf6ec 0%,#fdeef4 48%,#eef4fd 100%);}
+<aside class="side"><div class="sidestick"><a class="iconlink" href="reports.html" title="Reports"><img src="icons/icon-reports.webp" alt="Reports"></a><a class="iconlink" href="assets.html" title="Digital Assets"><img src="icons/icon-assets.webp" alt="Digital Assets"></a><a class="iconlink" href="tasks.html" title="Daily Tasks"><img src="icons/icon-tasks.webp" alt="Daily Tasks"></a></div></aside></div></div><style>
+/* web-only overrides. History: 2026-11-25 the report column was set to 1000px
+   inside a 1080px viewport and the document itself was the horizontal scroller;
+   on the user's phone (Instagram in-app browser) the browser shrink-fitted the
+   whole 1254px row (report + sidebar) into the screen, so the report opened at
+   ~80% width with the icon buttons peeking in from the right.
+   2026-11-26 fix (user: on open the report must be full-screen; the buttons
+   appear only after a sideways swipe): the layout viewport is now exactly the
+   report width (1000px, see build_wcm's viewport rewrite), and .hwrap sits
+   inside a .scroller box that owns BOTH scroll directions. The page itself
+   never overflows, so no browser fit/zoom-out can shrink the report.
+   Horizontal scroll-snap (proximity) rests either on the report or on the
+   button column. The buttons' sticky wrapper now sticks inside .scroller,
+   which is the actual vertical scroller, so the buttons still follow along
+   at any scroll depth. Desktop is unaffected (no horizontal overflow there).
+   The WCM report is followed, inside the same .report column, by the Invesco
+   daily report when one exists for the same date (see build_wcm). */
+html{background:linear-gradient(160deg,#fdf6ec 0%,#fdeef4 48%,#eef4fd 100%);height:100%;}
 /* width:auto + no side padding: the source body's width:1080px + 26px side padding
-   pushed .report to x=26..1106, past the 1080px phone viewport, cutting the right
-   edge off on phones. With this override .report spans exactly 0..1080. */
-body{margin:0;background:transparent;width:auto;padding:4px 0 0;}
-.hwrap{display:flex;flex-direction:row;width:1254px;margin:0 auto;overflow:visible;}
-.report{width:1000px;flex:0 0 auto;}
-aside.side{width:236px;flex:0 0 auto;margin-left:18px;}
+   pushed .report past the phone viewport, cutting the right edge off on phones. */
+body{margin:0;background:transparent;width:auto;padding:0;height:100%;}
+.scroller{height:100vh;height:100dvh;overflow:auto;scroll-snap-type:x proximity;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+.scroller::-webkit-scrollbar{display:none;}
+.hwrap{display:flex;flex-direction:row;width:1254px;margin:0 auto;overflow:visible;padding-top:4px;}
+.report{width:1000px;flex:0 0 auto;scroll-snap-align:start;}
+aside.side{width:236px;flex:0 0 auto;margin-left:18px;scroll-snap-align:start;}
 /* floating buttons: the aside stretches the full row height and this inner
    wrapper is the sticky element (a sticky flex ITEM does not travel in
    Chrome — user report 2026-11-25: buttons stayed at the top on his phone). */
