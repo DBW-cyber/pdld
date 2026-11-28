@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=1000">
+<style>
+@page { size: 1080px 1920px; margin: 0; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { width:1080px; min-height:1920px; font-family:"Noto Sans CJK JP","Noto Sans CJK SC",sans-serif; background:linear-gradient(160deg,#fdf6ec 0%,#fdeef4 48%,#eef4fd 100%); color:#33404f; padding:4px 26px 0px; }
+header { display:flex; justify-content:space-between; align-items:flex-start; }
+h1 { font-size:46px; font-weight:900; color:#123c63; line-height:1.1; }
+h1 .accent{color:#e86a92;}
+.sub { font-size:17px; color:#5a6d7f; margin-top:3px; line-height:1.4; font-weight:700;}
+.note { text-align:right; font-size:14.5px; line-height:1.5; color:#4a6072; font-weight:700; background:#fff; border-radius:12px; padding:8px 12px; box-shadow:0 3px 8px rgba(90,110,140,.10); white-space:nowrap;}
+.up{color:#0e9f6e;font-weight:900;} .dn{color:#d6455b;font-weight:900;}
+.topcards{display:flex; gap:12px; margin-top:3px;}
+.tcard{flex:1; background:#fff; border-radius:18px; padding:5px 16px 4px; box-shadow:0 6px 16px rgba(90,110,140,.12);}
+.tcard.pink{border-top:8px solid #f28ba8;} .tcard.gold{border-top:8px solid #f6c453;} .tcard.blue{border-top:8px solid #7fb3d9;}
+.tlabel{font-size:15px; font-weight:900; color:#6d7f8f; letter-spacing:.5px;}
+.tbig{font-size:42px; font-weight:900; color:#12293e; margin-top:4px; line-height:1.1;}
+.tbig small{font-size:20px;}
+.tsub{font-size:15.5px; line-height:1.45; color:#42566a; margin-top:4px;}
+.outlook{font-size:21px; font-weight:900; color:#12293e; line-height:1.38; margin-top:4px;}
+.panel{background:#fff; border-radius:18px; padding:2px 20px 1px; box-shadow:0 6px 16px rgba(90,110,140,.10); margin-top:2px;}
+.concl{border-top:8px solid #f28ba8;} .imp{border-top:8px solid #f6c453;}
+.ptitle{font-size:22px; font-weight:900; color:#123c63; margin-bottom:6px;}
+.judge{font-size:24px; font-weight:900; color:#12293e; line-height:1.30;}
+.attn{margin-top:2px; border:2px solid #e05252; background:#fff1f1; color:#9b2c2c; border-radius:10px; padding:5px 12px; font-size:16px; font-weight:800; line-height:1.45;}
+.ev{font-size:19.5px; line-height:1.18; color:#22303e; font-weight:800; padding:2px 0 2px 18px; position:relative;}
+.ev::before{content:"•"; position:absolute; left:1px; color:#e8930c; font-weight:900;}
+.ev b{color:#123c63;}
+.sect{font-size:23px; font-weight:900; color:#123c63; margin:2px 2px 1px;}
+.sect span{font-size:14px; color:#6d7f8f; font-weight:700;}
+.grid{display:flex; flex-wrap:wrap; gap:2px;}
+.card{width:513px; height:146px; background:#fff; border-radius:16px; padding:7px 15px 5px; box-shadow:0 4px 12px rgba(90,110,140,.10); border-top:6px solid #ccc;}
+.c1{border-top-color:#f6c453;} .c2{border-top-color:#f28ba8;} .c3{border-top-color:#7fb3d9;} .c4{border-top-color:#82c99b;} .c5{border-top-color:#b39ddb;}
+.chead{display:flex; align-items:center; gap:6px;}
+.badge{width:26px;height:26px;border-radius:50%;background:#123c63;color:#fff;font-size:15px;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none;}
+.logo{height:30px; max-width:88px; object-fit:contain; flex:none;}
+.cname{font-size:20px; font-weight:900; color:#22303e; white-space:nowrap;}
+.ctick{font-size:11.5px; color:#8a99a8; font-weight:700; margin-left:auto; white-space:nowrap;}
+.prow{display:flex; align-items:baseline; gap:10px; margin-top:2px;}
+.price{font-size:20px; font-weight:900; color:#12293e; white-space:nowrap;}
+.pill{font-size:16px; font-weight:900; color:#fff; border-radius:8px; padding:2px 10px; white-space:nowrap;}
+.pill.up{background:#12b981;} .pill.dn{background:#ef5350;}
+.theme{font-size:14px; font-weight:800; color:#7a5a00; background:#fdf3d7; border-radius:7px; padding:2px 8px; display:inline-block; margin-left:auto; white-space:nowrap; align-self:center;}
+.fin{font-size:15px; font-weight:900; color:#12293e; margin-top:3px; white-space:nowrap;}
+.obs{font-size:16.5px; line-height:1.32; font-weight:800; color:#22303e; margin-top:3px;}
+.val{font-size:16.5px; line-height:1.3; font-weight:900; color:#9a6206; margin-top:2px;}
+.band{background:#123c63; color:#fff; border-radius:16px; padding:3px 18px 3px; margin-top:2px;}
+.band h2{font-size:20px; font-weight:900; margin-bottom:5px;}
+.band .ev2{font-size:16px; line-height:1.36; padding-left:14px; position:relative;}
+.band .ev2::before{content:"•"; position:absolute; left:0; color:#f6c453;}
+.band .next{margin-top:2px; font-size:16.5px; font-weight:900; color:#ffe08a;}
+footer{margin-top:0px; font-size:12.3px; line-height:1.26; color:#8496a6; text-align:center;}
+footer b{color:#5f7488;}
+.vix{border-top:8px solid #7fb3d9;}
+.vixrow{display:flex; align-items:center; gap:14px; margin-bottom:0px;}
+.vixlabel{font-size:22px; font-weight:900; color:#123c63; white-space:nowrap;}
+.vixbig{font-size:40px; font-weight:900; color:#12293e; line-height:1;}
+.vixnote{font-size:14px; color:#6d7f8f; font-weight:700; margin-left:auto; text-align:right; line-height:1.4;}
+.vixobs{font-size:15.5px; font-weight:800; color:#42566a; margin-top:2px;}
+
+.caliber{font-size:14.5px; font-weight:800; color:#42566a; background:#fff; border-radius:10px; padding:5px 14px; margin-top:5px; box-shadow:0 3px 8px rgba(90,110,140,.08); line-height:1.4;}
+.contrib{background:#fff; border-radius:14px; padding:6px 18px; box-shadow:0 4px 12px rgba(90,110,140,.10); margin-top:4px; font-size:16.5px; font-weight:800; color:#22303e; line-height:1.45;}
+.contrib b{color:#123c63;}
+.tag{font-size:14px; font-weight:900; color:#fff; border-radius:6px; padding:1px 7px; margin-right:6px; vertical-align:2px;}
+.tag.d{background:#2f7fb8;} .tag.i{background:#82a86b;} .tag.m{background:#b08968;}
+</style></head><body>
+<div class="scroller"><div class="hwrap"><div class="report">
+
+<header><div><h1>◆ WCM <span class="accent">日報</span></h1><div class="sub">ＷＣＭ 世界成長株厳選ファンド（予想分配金提示型）<br>2026年11月28日（土）</div></div>
+<div class="note">市場日：欧米株＝11/27 終値<br>韓国株＝11/27 終値<br><span class="up">▲ 緑＝上昇</span>　<span class="dn">▼ 赤＝下落</span></div></header>
+<div class="caliber">データ口径：基準価額＝11月27日公表分／海外株＝11月27日終値（米・欧）／韓国株＝11月27日終値／組入比率＝2026-10-30 開示基準</div>
+<div class="topcards">
+<div class="tcard pink"><div class="tlabel">① 最新基準価額</div><div class="tbig">9,937<small> 円</small></div><div class="tsub"><span class="up">▲ ＋88円（＋0.89%）</span>｜11/27 07:29<br>出典：公表値・楽天証券確認<br>純資産額 5,012.75億円（前月末比 −7.2%）</div></div>
+<div class="tcard gold"><div class="tlabel">② 今月の見通し（預判）</div><div class="outlook">米市場の反発が通常取引でも続くことが、月内の10,000円回復の条件です。</div></div>
+<div class="tcard blue"><div class="tlabel">③ 半年内の見通し（預判）</div><div class="outlook">AI設備投資の持続が支えです。金利の織り込みが落ち着くことが、緩やかな回復の条件です。</div></div>
+</div>
+
+<div class="panel imp"><div class="ptitle">🔎 重要情報</div>
+<div class="ev"><span class="tag m">マクロ</span><b>米市場が反発（米 11/27 短縮取引／日本 11/28 未明）</b>：S&amp;P 500 +1.61%、Nasdaq +2.31%、SOX +4.69%。VIXは23.81へ低下し、重点銘柄全体の地合いが改善しました。</div>
+<div class="ev"><span class="tag d">直接</span><b>Samsung Electronics +4.55%</b>（₩179,100）：外国人の買越しが入り、KOSPIは +4.34%でした。11/25の下落分は2日で約半分を戻しました。</div>
+<div class="ev"><span class="tag d">直接</span><b>TSMC ADR +3.21%・Meta +3.13%</b>：半導体の買い戻しに連れ、重点10銘柄は11/27に全て上昇しました。</div>
+<div class="ev"><span class="tag m">マクロ</span><b>向こう1週間</b>：12/2に SharkNinja の S&amp;P 500 組入れが予定されています†。Samsung の DRAM 訴訟の回答期限は 12/7 です。</div>
+<div class="ptitle" style="margin-top:6px;">📌 今日の判断</div>
+<div class="judge">基準価額は9,937円（＋88円）と反発し、重点10銘柄は11/27に全て上昇しました。</div>
+<div class="attn">注意：米株11/27の上昇は、11/27分の基準価額には含まれず、主に翌営業日（12/1）の基準価額に反映されます。</div>
+</div>
+
+<div class="sect">📈 重点10銘柄 <span>最新終値（全市場 11/27）・2026-10-30基準の新前十（組入比率順）</span></div>
+<div class="grid"><div class="card c1"><div class="chead"><div class="badge">1</div><img class="logo" src="company-logos/rolls-royce.png"><div class="cname">Rolls-Royce</div><div class="ctick">RR.｜GBp｜11/28 01:30</div></div><div class="prow"><div class="price">1,310.0 p</div><div class="pill up">▲ ＋1.21%</div><span class="theme">航空・防衛エンジン</span></div><div class="obs">観測：2日続伸しました。新規発表は確認されず。</div><div class="val">評価額 1,150p（ChatGPT試算 11/22）</div><div class="fin">売上 £112.8億（+26%）・純利益 £16.2億（−63%）｜26H1</div></div><div class="card c2"><div class="chead"><div class="badge">2</div><img class="logo" src="company-logos/siemens-energy.png"><div class="cname">Siemens Energy</div><div class="ctick">ENR｜EUR｜11/28 01:30</div></div><div class="prow"><div class="price">€119.58 †</div><div class="pill up">▲ ＋1.77%</div><span class="theme">電力インフラ</span></div><div class="obs">観測：小幅高でした。終値は出典間で小差があります†。</div><div class="val">評価額 €135（ChatGPT試算 11/22）</div><div class="fin">売上 €442億（+13%）・純利益 €41.3億（+145%）｜FY26通期</div></div><div class="card c3"><div class="chead"><div class="badge">3</div><img class="logo" src="company-logos/tsmc.png"><div class="cname">TSMC ADR</div><div class="ctick">TSM｜USD｜11/28 03:00</div></div><div class="prow"><div class="price">$353.34</div><div class="pill up">▲ ＋3.21%</div><span class="theme">AI半導体</span></div><div class="obs">観測：半導体の買い戻しに連れて上昇しました。</div><div class="val">評価額 $440（ChatGPT試算 11/22）</div><div class="fin">売上 NT$1.49兆（+41%）・純利益 NT$7,631億（+69%）｜26Q3</div></div><div class="card c4"><div class="chead"><div class="badge">4</div><img class="logo" src="company-logos/sharkninja.png"><div class="cname">SharkNinja</div><div class="ctick">SN｜USD｜11/28 03:00</div></div><div class="prow"><div class="price">$236.98</div><div class="pill up">▲ ＋1.93%</div><span class="theme">家電・消費</span></div><div class="obs">観測：52週高値を更新しました。12/2に組入れ予定です†。</div><div class="val">評価額 $180（ChatGPT試算 11/22）</div><div class="fin">売上 $19.8億（+21%）・純利益 $3.4億（+79%）｜26Q3</div></div><div class="card c5"><div class="chead"><div class="badge">5</div><img class="logo" src="company-logos/welltower.png"><div class="cname">Welltower</div><div class="ctick">WELL｜USD｜11/28 03:00</div></div><div class="prow"><div class="price">$249.69</div><div class="pill up">▲ ＋1.43%</div><span class="theme">ヘルスケアREIT</span></div><div class="obs">観測：全面高の中で堅調でした。</div><div class="val">評価額 $210（ChatGPT試算 11/22）</div><div class="fin">売上 $37.2億（+38%）・純利益 $4.1億（+47%）｜26Q3</div></div><div class="card c1"><div class="chead"><div class="badge">6</div><img class="logo" src="company-logos/samsung.png" style="max-width:66px;"><div class="cname">Samsung Electronics</div><div class="ctick">SE｜KRW｜11/27 15:30</div></div><div class="prow"><div class="price">₩179,100</div><div class="pill up">▲ ＋4.55%</div><span class="theme">メモリ・HBM</span></div><div class="obs">観測：外国人の買越しで、前十で最大の上昇でした。</div><div class="val">評価額 ₩230,000（ChatGPT試算 11/22）</div><div class="fin">売上 ₩195.3兆（+127%）・純利益 ₩75.1兆（+515%）｜26Q3</div></div><div class="card c2"><div class="chead"><div class="badge">7</div><img class="logo" src="company-logos/teva.png"><div class="cname">Teva</div><div class="ctick">TEVA｜USD｜11/28 03:00</div></div><div class="prow"><div class="price">$39.94</div><div class="pill up">▲ ＋0.20%</div><span class="theme">医薬品</span></div><div class="obs">観測：小幅高でした。新規発表は確認されず。</div><div class="val">評価額 $39（ChatGPT試算 11/22）</div><div class="fin">売上 $44.0億（−2%）・純利益 $2.3億（−46%）｜26Q3</div></div><div class="card c3"><div class="chead"><div class="badge">8</div><img class="logo" src="company-logos/microsoft.png"><div class="cname">Microsoft</div><div class="ctick">MSFT｜USD｜11/28 03:00</div></div><div class="prow"><div class="price">$492.85</div><div class="pill up">▲ ＋0.60%</div><span class="theme">クラウド・AI</span></div><div class="obs">観測：指数には劣後する小幅高でした。</div><div class="val">評価額 $616（ChatGPT試算 11/22）</div><div class="fin">売上 $922.8億（+19%）・純利益 $366.3億（+32%）｜FY27Q1</div></div><div class="card c4"><div class="chead"><div class="badge">9</div><img class="logo" src="company-logos/meta.png"><div class="cname">Meta Platforms</div><div class="ctick">META｜USD｜11/28 03:00</div></div><div class="prow"><div class="price">$628.96</div><div class="pill up">▲ ＋3.13%</div><span class="theme">SNS・AI投資</span></div><div class="obs">観測：$620台を回復しました。</div><div class="val">評価額 $640（ChatGPT試算 11/22）</div><div class="fin">売上 $646億（+26%）・純利益 $98.6億（+264%）｜26Q3</div></div><div class="card c5"><div class="chead"><div class="badge">10</div><img class="logo" src="company-logos/charles-river.png"><div class="cname">Charles River Labs</div><div class="ctick">CRL｜USD｜11/28 03:00</div></div><div class="prow"><div class="price">$337.39</div><div class="pill up">▲ ＋1.60%</div><span class="theme">創薬支援・CRO</span></div><div class="obs">観測：小幅高でした。新規発表は確認されず。</div><div class="val">評価額 $260（ChatGPT試算 11/22）</div><div class="fin">売上 $9.8億（−2%）・純利益 $3.3億（+512%）｜26Q3</div></div></div>
+
+<div class="contrib"><b>推定寄与（組入比率×騰落率）</b>：寄与最大は Samsung Electronics 約+0.20pt、最も小さい寄与は Teva 約+0.01ptで、10銘柄全てがプラス寄与でした。10銘柄合計は約+0.92ptで、基準価額の前日比（+0.89%）との差は、主に時間差（米株11/27の上昇が未反映）によるものです。</div>
+
+<div class="panel vix"><div class="vixrow"><div class="vixlabel">📉 VIX（恐怖指数）</div><div class="vixbig">23.81</div><div class="pill up">▼ −4.48（−15.84%）</div><div class="vixnote">11/27 終値（前営業日 11/25 の 28.29、11/26 は米休場）<br>直近半年（約126営業日）の終値推移</div></div>
+<svg width="988" height="56" viewBox="0 0 988 96"><polygon points="8.0,94.0 8.0,74.9 15.6,76.2 23.2,74.0 30.8,74.9 38.4,74.0 46.0,75.9 53.6,57.8 61.1,65.5 68.7,62.7 76.3,55.8 83.9,64.0 91.5,69.2 99.1,73.6 106.7,73.0 114.3,66.9 121.9,73.0 129.5,71.8 137.1,70.4 144.7,63.8 152.3,66.3 159.9,65.6 167.5,67.1 175.0,69.3 182.6,72.8 190.2,72.4 197.8,73.7 205.4,74.7 213.0,75.4 220.6,73.8 228.2,71.5 235.8,74.6 243.4,77.0 251.0,70.7 258.6,72.7 266.2,75.2 273.8,72.0 281.4,65.9 289.0,66.3 296.6,71.1 304.1,72.3 311.7,66.2 319.3,66.5 326.9,66.2 334.5,67.6 342.1,60.4 349.7,71.0 357.3,74.2 364.9,74.6 372.5,72.7 380.1,74.7 387.7,76.7 395.3,77.4 402.9,75.7 410.5,76.3 418.0,78.5 425.6,78.2 433.2,79.3 440.8,76.6 448.4,74.6 456.0,77.5 463.6,74.1 471.2,76.7 478.8,74.6 486.4,75.8 494.0,76.5 501.6,78.6 509.2,78.8 516.8,77.3 524.4,73.1 532.0,76.5 539.6,79.1 547.1,78.5 554.7,76.2 562.3,75.0 569.9,72.8 577.5,68.7 585.1,74.6 592.7,70.9 600.3,70.6 607.9,69.1 615.5,75.8 623.1,77.7 630.7,77.5 638.3,79.5 645.9,76.6 653.5,75.2 661.0,77.5 668.6,74.0 676.2,74.0 683.8,73.1 691.4,73.0 699.0,76.2 706.6,75.6 714.2,77.1 721.8,76.9 729.4,75.9 737.0,77.6 744.6,76.5 752.2,76.3 759.8,71.6 767.4,72.8 775.0,62.3 782.6,66.9 790.1,70.3 797.7,72.1 805.3,65.2 812.9,63.9 820.5,67.1 828.1,69.7 835.7,71.5 843.3,70.6 850.9,64.0 858.5,58.9 866.1,59.8 873.7,72.4 881.3,38.1 888.9,45.6 896.5,62.6 904.0,63.9 911.6,69.8 919.2,66.2 926.8,64.4 934.4,53.7 942.0,46.1 949.6,48.8 957.2,37.3 964.8,15.2 971.8,42.6 979.4,43.4 987.0,51.8 987.0,94.0" fill="rgba(127,179,217,.28)"/><line x1="8" y1="62.3" x2="980" y2="62.3" stroke="#b9c7d6" stroke-width="1.5" stroke-dasharray="6 5"/><text x="10" y="57.3" font-size="13" font-weight="700" fill="#8496a6">20</text><polyline points="8.0,74.9 15.6,76.2 23.2,74.0 30.8,74.9 38.4,74.0 46.0,75.9 53.6,57.8 61.1,65.5 68.7,62.7 76.3,55.8 83.9,64.0 91.5,69.2 99.1,73.6 106.7,73.0 114.3,66.9 121.9,73.0 129.5,71.8 137.1,70.4 144.7,63.8 152.3,66.3 159.9,65.6 167.5,67.1 175.0,69.3 182.6,72.8 190.2,72.4 197.8,73.7 205.4,74.7 213.0,75.4 220.6,73.8 228.2,71.5 235.8,74.6 243.4,77.0 251.0,70.7 258.6,72.7 266.2,75.2 273.8,72.0 281.4,65.9 289.0,66.3 296.6,71.1 304.1,72.3 311.7,66.2 319.3,66.5 326.9,66.2 334.5,67.6 342.1,60.4 349.7,71.0 357.3,74.2 364.9,74.6 372.5,72.7 380.1,74.7 387.7,76.7 395.3,77.4 402.9,75.7 410.5,76.3 418.0,78.5 425.6,78.2 433.2,79.3 440.8,76.6 448.4,74.6 456.0,77.5 463.6,74.1 471.2,76.7 478.8,74.6 486.4,75.8 494.0,76.5 501.6,78.6 509.2,78.8 516.8,77.3 524.4,73.1 532.0,76.5 539.6,79.1 547.1,78.5 554.7,76.2 562.3,75.0 569.9,72.8 577.5,68.7 585.1,74.6 592.7,70.9 600.3,70.6 607.9,69.1 615.5,75.8 623.1,77.7 630.7,77.5 638.3,79.5 645.9,76.6 653.5,75.2 661.0,77.5 668.6,74.0 676.2,74.0 683.8,73.1 691.4,73.0 699.0,76.2 706.6,75.6 714.2,77.1 721.8,76.9 729.4,75.9 737.0,77.6 744.6,76.5 752.2,76.3 759.8,71.6 767.4,72.8 775.0,62.3 782.6,66.9 790.1,70.3 797.7,72.1 805.3,65.2 812.9,63.9 820.5,67.1 828.1,69.7 835.7,71.5 843.3,70.6 850.9,64.0 858.5,58.9 866.1,59.8 873.7,72.4 881.3,38.1 888.9,45.6 896.5,62.6 904.0,63.9 911.6,69.8 919.2,66.2 926.8,64.4 934.4,53.7 942.0,46.1 949.6,48.8 957.2,37.3 964.8,15.2 971.8,42.6 979.4,43.4 987.0,51.8" fill="none" stroke="#2f7fb8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="964.8" cy="15.2" r="5" fill="#d6455b"/><text x="964.8" y="35.2" font-size="15" font-weight="900" fill="#d6455b" text-anchor="end">最高 35.89（11/20）</text><circle cx="638.3" cy="79.5" r="5" fill="#0e9f6e"/><text x="638.3" y="67.5" font-size="15" font-weight="900" fill="#0e7a55" text-anchor="middle">最低 14.21（9/22）</text><circle cx="987.0" cy="51.8" r="5" fill="#123c63"/><text x="987" y="92" font-size="13" font-weight="700" fill="#8496a6" text-anchor="end">直近半年　最新 23.81</text></svg>
+<div class="vixobs">観測：20を超える水準は、警戒感が残る地合いとされます。株の反発で低下しましたが、20は上回っています。</div></div>
+
+<div class="band"><h2>🗓 後続重点（向こう1週間）</h2>
+<div class="ev2">12/1（月）に米株11/27の上昇を反映した基準価額が公表される見込みです</div>
+<div class="ev2">12/2（火）に SharkNinja の S&amp;P 500 組入れが予定されています†</div>
+<div class="ev2">Samsung の DRAM 訴訟の回答期限は 12/7、次回決算（分配金発表）は 12/25 です</div>
+<div class="next">次の一手：米市場の反発が通常取引でも続くかを、12/1の基準価額で確認します。</div></div>
+
+<footer>出典：<b>楽天証券</b>（基準価額 11/27・11/28 07:29 直接確認）／ <b>Finnhubほか</b>（10銘柄終値、欧州・韓国株は各市場集計で確認）／ <b>Reuters・APほか</b>（米・アジア・欧州市場）／各社公式決算（売上・純利益）／ <b>CBOE公式データに基づく複数源</b>（VIX 11/27終値 23.81、CBOE遅延クォートは取得不可）｜ 取得：2026-11-28 07:00 JST（前日07:00→当日07:00 结算）<br>† 単一ソース・未交叉確認　投資勧誘ではありません。</footer>
+
+<div style="margin-top:40px;">
+<header><div><h1>◆ 世界のベスト <span class="accent">日報</span></h1><div class="sub">インベスコ 世界厳選株式オープン＜為替ヘッジなし＞（毎月決算型）<br>2026年11月28日（土）</div></div>
+<div class="note">市場日：欧米・香港株＝11/27 終値<br>米株＝11/27 短縮取引（13:00 ET引け）<br><span class="up">▲ 緑＝上昇</span>　<span class="dn">▼ 赤＝下落</span></div></header>
+<div class="caliber">データ口径：基準価額＝11月27日公表分／海外株＝11月27日終値（米国は短縮取引）／組入比率＝2026-10-30 基準（みんかぶ速報・月次レポート抽出）</div>
+<div class="topcards">
+<div class="tcard pink"><div class="tlabel">① 最新基準価額</div><div class="tbig">8,466<small> 円</small></div><div class="tsub"><span class="up">▲ ＋78円（＋0.93%）</span>｜11/28 07:31<br>出典：楽天証券（JP90C0002EX1）で確認<br>純資産額 46,542.89億円</div></div>
+<div class="tcard gold"><div class="tlabel">② 今月の見通し（預判）</div><div class="outlook">米国の反発が続き、欧州株の底堅さが維持されることが、12月初めに向けた支えの条件です。</div></div>
+<div class="tcard blue"><div class="tlabel">③ 半年内の見通し（預判）</div><div class="outlook">組入企業の利益成長と欧州バリュー銘柄の底堅さが支えです。金利と関税の動向が落ち着くことが、緩やかな回復の条件です。</div></div>
+</div>
+<div class="panel imp"><div class="ptitle">🔎 重要情報</div>
+<div class="ev"><span class="tag d">直接</span><b>騰落最大（11/27）</b>：上昇は Texas Instruments +4.32%（$281.85、半導体株の買い戻し）、次いで DSV +3.29%でした。特定できた8銘柄は全て上昇し、下落した銘柄はありませんでした。</div>
+<div class="ev"><span class="tag m">マクロ</span><b>米市場（11/27）</b>：感謝祭翌日の短縮取引で S&P 500 +1.61%、Nasdaq +2.31%、Dow +1.19%と全面高でした（Reuters）。出来高は薄く、週間では大幅高となりました。</div>
+<div class="ev"><span class="tag m">マクロ</span><b>アジア・欧州（11/27）</b>：日経平均 +2.11%、韓国 KOSPI +4.34%、欧州 STOXX 600 +1.1%、ハンセン +2.11%と各市場が反発しました。</div>
+<div class="ev"><span class="tag i">間接</span><b>向こう1週間</b>：12月上旬の米議会日程と、12月の FOMC・日銀会合に向けた金利動向が確認点です。次回決算日は 12/23 です。</div>
+<div class="ptitle" style="margin-top:6px;">📌 今日の判断</div>
+<div class="judge">基準価額は8,466円（+78円）と3日続けて上昇しました。米国の大幅高はまだ反映されておらず、次の公表分が確認点です。</div>
+<div class="attn">注意：米国 11/27（日本 11/28未明）の値動きは11/27分の基準価額には含まれず、主に翌営業日の基準価額に反映されます。</div>
+</div>
+<div class="sect">📈 重点10銘柄 <span>最新終値・2026-10-30基準の組入上位10銘柄（比率順）</span></div>
+<div class="grid"><div class="card c1"><div class="chead"><div class="badge">1</div><div class="cname">3i Group</div><div class="ctick">III｜GBp｜11/28 01:30</div></div><div class="prow"><div class="price">2,814 p</div><div class="pill up">▲ ＋1.22%</div><span class="theme">投資会社・小売Action</span></div><div class="obs">観測：FTSE 100（+0.84%）とともに上昇しました。新規発表は確認されず。</div><div class="fin">総リターン £16.2億（+5%）・NAV 3,154p｜H1 FY27</div></div><div class="card c2"><div class="chead"><div class="badge">2</div><div class="cname">Canadian Pacific Kansas City</div><div class="ctick">CP｜USD｜11/28 03:00</div></div><div class="prow"><div class="price">$93.94</div><div class="pill up">▲ ＋0.80%</div><span class="theme">北米貨物鉄道</span></div><div class="obs">観測：米国の短縮取引で小幅高でした。新規発表は確認されず。</div><div class="fin">売上 C$42.2億（+15%）・コアEPS +16%｜26Q3</div></div><div class="card c3"><div class="chead"><div class="badge">3</div><div class="cname">名称未特定（米・情報技術）</div><div class="ctick">―｜USD｜―</div></div><div class="prow"><div class="price">未確認</div><div class="pill na">―</div><span class="theme">情報技術</span></div><div class="obs">観測：月次レポート抽出で銘柄名が空欄のため特定しません。公式レポートでの確認待ちです。</div><div class="fin">最新決算は名称未特定のため未確認</div></div><div class="card c4"><div class="chead"><div class="badge">4</div><div class="cname">AIA Group</div><div class="ctick">1299｜HKD｜11/27 17:00</div></div><div class="prow"><div class="price">HK$75.05</div><div class="pill up">▲ ＋1.42%</div><span class="theme">生命保険</span></div><div class="obs">観測：ハンセン指数（+2.11%）に連れて上昇しました。新規発表は確認されず。</div><div class="fin">VONB $32.1億（+10%）・過去最高｜26H1</div></div><div class="card c5"><div class="chead"><div class="badge">5</div><div class="cname">Visa</div><div class="ctick">V｜USD｜11/28 03:00</div></div><div class="prow"><div class="price">$429.56</div><div class="pill up">▲ ＋1.22%</div><span class="theme">決済ネットワーク</span></div><div class="obs">観測：米国の短縮取引で堅調でした。新規発表は確認されず。</div><div class="fin">純収入 $459億（+15%）・EPS +16%｜FY26通期</div></div><div class="card c1"><div class="chead"><div class="badge">6</div><div class="cname">DSV</div><div class="ctick">DSV｜DKK｜11/28 01:30</div></div><div class="prow"><div class="price">DKK 1,427.00</div><div class="pill up">▲ ＋3.29%</div><span class="theme">物流・フォワーディング</span></div><div class="obs">観測：欧州株の続伸の中で大きく上昇しました。新規発表は確認されず。</div><div class="fin">売上 DKK807億（+12%）・純利益 DKK30.2億（+40%）｜26Q3</div></div><div class="card c2"><div class="chead"><div class="badge">7</div><div class="cname">Texas Instruments</div><div class="ctick">TXN｜USD｜11/28 03:00</div></div><div class="prow"><div class="price">$281.85</div><div class="pill up">▲ ＋4.32%</div><span class="theme">アナログ半導体</span></div><div class="obs">観測：半導体株の買い戻し（SOX +4.69%）に連れ、特定銘柄で最大の上昇でした。</div><div class="fin">売上 $60.6億（+28%）・EPS $2.62｜26Q3</div></div><div class="card c3"><div class="chead"><div class="badge">8</div><div class="cname">名称未特定（米・情報技術）</div><div class="ctick">―｜USD｜―</div></div><div class="prow"><div class="price">未確認</div><div class="pill na">―</div><span class="theme">情報技術</span></div><div class="obs">観測：月次レポート抽出で銘柄名が空欄のため特定しません。公式レポートでの確認待ちです。</div><div class="fin">最新決算は名称未特定のため未確認</div></div><div class="card c4"><div class="chead"><div class="badge">9</div><div class="cname">Coca-Cola Europacific</div><div class="ctick">CCEP｜USD｜11/28 03:00</div></div><div class="prow"><div class="price">$118.06</div><div class="pill up">▲ ＋0.06%</div><span class="theme">飲料ボトラー</span></div><div class="obs">観測：米国の短縮取引でほぼ横ばいでした。新規発表は確認されず。</div><div class="fin">売上 €57.6億（+6.5%）・販売量 +3.5%｜26Q3</div></div><div class="card c5"><div class="chead"><div class="badge">10</div><div class="cname">Medline</div><div class="ctick">MDLN｜USD｜11/28 03:00</div></div><div class="prow"><div class="price">$41.19</div><div class="pill up">▲ ＋1.53%</div><span class="theme">医療用品</span></div><div class="obs">観測：米国の短縮取引で堅調でした。新規発表は確認されず。</div><div class="fin">売上 $79億（+10%）・純利益 $3.2億（−1%）｜26Q3</div></div></div>
+<div class="contrib"><b>推定寄与（組入比率×騰落率、表示終値ベース）</b>：寄与最大は Texas Instruments 約+0.13pt、次いで DSV 約+0.11pt。特定できた8銘柄は全て上昇し、合計は約+0.45ptです。基準価額の前日比（+0.93%）との差は、主に時間差（米国 11/27の大幅高が未反映）と為替、未特定2銘柄分によるものです。</div>
+<div class="band"><h2>🗓 後続重点（向こう1週間）</h2>
+<div class="ev2">12/1（月）の公表分で、米国 11/27の大幅高の反映幅を確認します</div>
+<div class="ev2">12月の FOMC と日銀会合（12/17–18）に向けた金利動向が月内の方向を左右します</div>
+<div class="ev2">次回決算日は 12/23（毎月23日）です</div>
+<div class="next">次の一手：12/1公表分で米反発の反映幅と、欧州株の続伸の有無を確認します。</div></div>
+<footer>出典：<b>楽天証券</b>（基準価額 11/27・ファンドコード JP90C0002EX1・直接確認）／ <b>Finnhub・StockAnalysis・ADVFNほか</b>（銘柄終値、11/27）／ <b>みんかぶ投資信託</b>（組入上位 2026-10-30基準の速報抽出、第3位・第8位は銘柄名が空欄のため未特定）／各社公式決算・専档整理（売上・純利益）｜ 取得：2026-11-28 07:31 JST（07:00结算時点の最新公表分）<br>投資勧誘ではありません。</footer>
+</div>
+</div>
+<aside class="side"><div class="sidestick"><a class="iconlink" href="reports.html" title="Reports"><img src="icons/icon-reports.webp" alt="Reports"></a><a class="iconlink" href="assets.html" title="Digital Assets"><img src="icons/icon-assets.webp" alt="Digital Assets"></a><a class="iconlink" href="tasks.html" title="Daily Tasks"><img src="icons/icon-tasks.webp" alt="Daily Tasks"></a><a class="iconlink" href="https://lit.link/funnykitten" title="lit.link"><img src="icons/icon-litlink.webp" alt="lit.link"></a><a class="iconlink" href="https://dbw-cyber.github.io/mlucky-uranai/" title="MLucky Fortune"><img src="icons/icon-uranai.webp" alt="MLucky Fortune"></a><a class="iconlink" href="https://dbw-cyber.github.io/mlucky-fashion/" title="MLucky Fashion"><img src="icons/icon-fashion.webp" alt="MLucky Fashion"></a><a class="iconlink" href="https://dbw-cyber.github.io/mlucky-remotework/" title="MLucky Remote Work"><img src="icons/icon-remotework.webp" alt="MLucky Remote Work"></a></div></aside></div></div><style>
+/* web-only overrides. History: 2026-11-25 the report column was set to 1000px
+   inside a 1080px viewport and the document itself was the horizontal scroller;
+   on the user's phone (Instagram in-app browser) the browser shrink-fitted the
+   whole 1254px row (report + sidebar) into the screen, so the report opened at
+   ~80% width with the icon buttons peeking in from the right.
+   2026-11-26 fix (user: on open the report must be full-screen; the buttons
+   appear only after a sideways swipe): the layout viewport is now exactly the
+   report width (1000px, see build_wcm's viewport rewrite), and .hwrap sits
+   inside a .scroller box that owns BOTH scroll directions. The page itself
+   never overflows, so no browser fit/zoom-out can shrink the report.
+   Horizontal scroll-snap (proximity) rests either on the report or on the
+   button column. The buttons' sticky wrapper now sticks inside .scroller,
+   which is the actual vertical scroller, so the buttons still follow along
+   at any scroll depth. Desktop is unaffected (no horizontal overflow there).
+   The WCM report is followed, inside the same .report column, by the Invesco
+   daily report when one exists for the same date (see build_wcm). */
+html{background:linear-gradient(160deg,#fdf6ec 0%,#fdeef4 48%,#eef4fd 100%);height:100%;}
+/* width:auto + no side padding: the source body's width:1080px + 26px side padding
+   pushed .report past the phone viewport, cutting the right edge off on phones. */
+body{margin:0;background:transparent;width:auto;padding:0;height:100%;}
+.scroller{height:100vh;height:100dvh;overflow:auto;scroll-snap-type:x proximity;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+.scroller::-webkit-scrollbar{display:none;}
+.hwrap{display:flex;flex-direction:row;width:1254px;margin:0 auto;overflow:visible;padding-top:4px;}
+.report{width:1000px;flex:0 0 auto;scroll-snap-align:start;}
+aside.side{width:236px;flex:0 0 auto;margin-left:18px;scroll-snap-align:start;}
+/* floating buttons: the aside stretches the full row height and this inner
+   wrapper is the sticky element (a sticky flex ITEM does not travel in
+   Chrome — user report 2026-11-25: buttons stayed at the top on his phone). */
+.sidestick{position:sticky;top:26px;padding-top:26px;display:flex;flex-direction:column;align-items:center;gap:16px;}
+aside.side a.iconlink{display:block;line-height:0;}
+aside.side a.iconlink img{width:104px;height:104px;border-radius:22px;box-shadow:0 4px 14px rgba(90,110,140,.18);}
+.grid{gap:2px;}
+/* web-only card width: .report is 1000px wide on the web, so cards are 499px
+   (499*2 + gap 2 = 1000) to align the grid's right edge with the other blocks.
+   The PNG/source HTML keeps 513px cards for its 1028px content width.
+   Do not "unify" the two numbers. */
+.card{width:499px;height:auto;min-height:164px;padding:10px 16px 10px;}
+.obs{margin-top:4px;}
+.val{margin-top:4px;}
+</style>
+</body></html>
